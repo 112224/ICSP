@@ -21,7 +21,6 @@ import json
 import time
 import ssl
 import traceback
-import pprint
 from collections import Counter
 import urllib3
 
@@ -29,14 +28,16 @@ import urllib3
 from subbrute import subbrute
 import dns.resolver
 import requests
+from cryptography import x509
+from cryptography.hazmat.backends import default_backend
+from cryptography.x509.oid import NameOID
 
-#for file save
+# for file save
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-
 
 # Python 2.x and 3.x compatiablity
 if sys.version > '3':
@@ -50,13 +51,13 @@ else:
 # there's also an option to disable the SSL warning:
 try:
     import requests.packages.urllib3
+
     requests.packages.urllib3.disable_warnings()
 except:
     pass
 
 # Check if we are running this on windows platform
 is_windows = sys.platform.startswith('win')
-
 
 # Console Colors
 if is_windows:
@@ -65,12 +66,13 @@ if is_windows:
     Y = '\033[93m'  # yellow
     B = '\033[94m'  # blue
     R = '\033[91m'  # red
-    W = '\033[0m'   # white
+    W = '\033[0m'  # white
     try:
-        import win_unicode_console , colorama
+        import win_unicode_console, colorama
+
         win_unicode_console.enable()
         colorama.init()
-        #Now the unicode will work ^_^
+        # Now the unicode will work ^_^
     except:
         print("[!] Error: Coloring libraries not installed, no coloring will be used [Check the readme]")
         G = Y = B = R = W = G = Y = B = R = W = ''
@@ -81,7 +83,8 @@ else:
     Y = '\033[93m'  # yellow
     B = '\033[94m'  # blue
     R = '\033[91m'  # red
-    W = '\033[0m'   # white
+    W = '\033[0m'  # white
+
 
 def no_color():
     global G, Y, B, R, W
@@ -89,7 +92,7 @@ def no_color():
 
 
 def parser_error(errmsg):
-    #banner()
+    # banner()
     print("Usage: python " + sys.argv[0] + " [Options] use -h for help")
     print(R + "Error: " + errmsg + W)
     sys.exit()
@@ -103,13 +106,14 @@ def parse_args():
     parser.add_argument('-d', '--domain', help="Domain name to enumerate it's subdomains", required=True)
     parser.add_argument('-b', '--bruteforce', help='Enable the subbrute bruteforce module', nargs='?', default=False)
     parser.add_argument('-p', '--ports', help='Scan the found subdomains against specified tcp ports', default='80,443')
-    parser.add_argument('-v', '--verbose', help='Enable Verbosity and display results in realtime', nargs='?', default=False)
-    parser.add_argument('-t', '--threads', help='Number of threads to use for subbrute bruteforce', type=int, default=30)
+    parser.add_argument('-v', '--verbose', help='Enable Verbosity and display results in realtime', nargs='?',
+                        default=False)
+    parser.add_argument('-t', '--threads', help='Number of threads to use for subbrute bruteforce', type=int,
+                        default=30)
     parser.add_argument('-e', '--engines', help='Specify a comma-separated list of search engines')
     parser.add_argument('-o', '--output', help='Save the results to text file')
     parser.add_argument('-n', '--no-color', help='Output without color', default=False, action='store_true')
     return parser.parse_args()
-
 
 
 def write_file(filename, df):
@@ -117,12 +121,11 @@ def write_file(filename, df):
     # saving subdomains results to output file
     print("%s[-] Saving results to file: %s%s%s%s" % (Y, W, R, filename, W))
     if not df.empty:
-        #df = pd.DataFrame(subdomains, columns=['domain','ports'])
+        # df = pd.DataFrame(subdomains, columns=['domain','ports'])
         df.to_csv(filename, index=False)
-        #print("save!")
+        # print("save!")
     else:
         print("Data Frame is empty!\n Please check the args")
-
 
 
 def subdomain_sorting_key(hostname):
@@ -138,7 +141,7 @@ def subdomain_sorting_key(hostname):
         'a.example.com',
         'www.a.example.com',
         'b.a.example.com',
-        'b.example.com',
+        'b.example.com',ssl._create_unverified_context()
         'example.net',
         'www.example.net',
         'a.example.net',
@@ -257,7 +260,7 @@ class enumratorBase(object):
                 retries += 1
                 page_no = self.get_page(page_no)
 
-        # make another retry maybe it isn't the last page
+                # make another retry maybe it isn't the last page
                 if retries >= 3:
                     return self.subdomains
 
@@ -265,7 +268,6 @@ class enumratorBase(object):
             self.should_sleep()
 
         return self.subdomains
-
 
 
 class enumratorBaseThreaded(multiprocessing.Process, enumratorBase):
@@ -282,7 +284,6 @@ class enumratorBaseThreaded(multiprocessing.Process, enumratorBase):
             self.q.append(domain)
 
 
-
 # google class
 class GoogleEnum(enumratorBaseThreaded):
     def __init__(self, domain, subdomains=None, q=None, silent=False, verbose=True):
@@ -291,7 +292,8 @@ class GoogleEnum(enumratorBaseThreaded):
         self.engine_name = "Google"
         self.MAX_DOMAINS = 11
         self.MAX_PAGES = 200
-        super(GoogleEnum, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(GoogleEnum, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                         verbose=verbose)
         self.q = q
         return
 
@@ -341,7 +343,8 @@ class YahooEnum(enumratorBaseThreaded):
         self.engine_name = "Yahoo"
         self.MAX_DOMAINS = 10
         self.MAX_PAGES = 0
-        super(YahooEnum, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(YahooEnum, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                        verbose=verbose)
         self.q = q
         return
 
@@ -392,7 +395,8 @@ class AskEnum(enumratorBaseThreaded):
         self.engine_name = "Ask"
         self.MAX_DOMAINS = 11
         self.MAX_PAGES = 0
-        enumratorBaseThreaded.__init__(self, base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        enumratorBaseThreaded.__init__(self, base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                       verbose=verbose)
         self.q = q
         return
 
@@ -426,7 +430,6 @@ class AskEnum(enumratorBaseThreaded):
             query = "site:{domain} -www.{domain}".format(domain=self.domain)
 
         return query
-
 
 
 class BingEnum(enumratorBaseThreaded):
@@ -481,7 +484,8 @@ class BaiduEnum(enumratorBaseThreaded):
         self.engine_name = "Baidu"
         self.MAX_DOMAINS = 2
         self.MAX_PAGES = 760
-        enumratorBaseThreaded.__init__(self, base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        enumratorBaseThreaded.__init__(self, base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                       verbose=verbose)
         self.querydomain = self.domain
         self.q = q
         return
@@ -534,13 +538,13 @@ class BaiduEnum(enumratorBaseThreaded):
         return query
 
 
-
 class NetcraftEnum(enumratorBaseThreaded):
     def __init__(self, domain, subdomains=None, q=None, silent=False, verbose=True):
         subdomains = subdomains or []
         self.base_url = 'https://searchdns.netcraft.com/?restriction=site+ends+with&host={domain}'
         self.engine_name = "Netcraft"
-        super(NetcraftEnum, self).__init__(self.base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(NetcraftEnum, self).__init__(self.base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                           verbose=verbose)
         self.q = q
         return
 
@@ -568,7 +572,8 @@ class NetcraftEnum(enumratorBaseThreaded):
         cookies_list = cookie[0:cookie.find(';')].split("=")
         cookies[cookies_list[0]] = cookies_list[1]
         # hashlib.sha1 requires utf-8 encoded str
-        cookies['netcraft_js_verification_response'] = hashlib.sha1(urllib.unquote(cookies_list[1]).encode('utf-8')).hexdigest()
+        cookies['netcraft_js_verification_response'] = hashlib.sha1(
+            urllib.unquote(cookies_list[1]).encode('utf-8')).hexdigest()
         return cookies
 
     def get_cookies(self, headers):
@@ -610,7 +615,6 @@ class NetcraftEnum(enumratorBaseThreaded):
         return links_list
 
 
-
 class DNSdumpster(enumratorBaseThreaded):
     def __init__(self, domain, subdomains=None, q=None, silent=False, verbose=True):
         subdomains = subdomains or []
@@ -619,7 +623,8 @@ class DNSdumpster(enumratorBaseThreaded):
         self.engine_name = "DNSdumpster"
         self.q = q
         self.lock = None
-        super(DNSdumpster, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(DNSdumpster, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                          verbose=verbose)
         return
 
     def check_host(self, host):
@@ -690,14 +695,14 @@ class DNSdumpster(enumratorBaseThreaded):
         return links
 
 
-
 class ThreatCrowd(enumratorBaseThreaded):
     def __init__(self, domain, subdomains=None, q=None, silent=False, verbose=True):
         subdomains = subdomains or []
         base_url = 'https://www.threatcrowd.org/searchApi/v2/domain/report/?domain={domain}'
         self.engine_name = "ThreatCrowd"
         self.q = q
-        super(ThreatCrowd, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(ThreatCrowd, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                          verbose=verbose)
         return
 
     def req(self, url):
@@ -729,14 +734,14 @@ class ThreatCrowd(enumratorBaseThreaded):
             pass
 
 
-
 class CrtSearch(enumratorBaseThreaded):
     def __init__(self, domain, subdomains=None, q=None, silent=False, verbose=True):
         subdomains = subdomains or []
         base_url = 'https://crt.sh/?q=%25.{domain}'
         self.engine_name = "SSL Certificates"
         self.q = q
-        super(CrtSearch, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(CrtSearch, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                        verbose=verbose)
         return
 
     def req(self, url):
@@ -771,7 +776,7 @@ class CrtSearch(enumratorBaseThreaded):
                         continue
 
                     if '@' in subdomain:
-                        subdomain = subdomain[subdomain.find('@')+1:]
+                        subdomain = subdomain[subdomain.find('@') + 1:]
 
                     if subdomain not in self.subdomains and subdomain != self.domain:
                         if self.verbose:
@@ -782,14 +787,14 @@ class CrtSearch(enumratorBaseThreaded):
             pass
 
 
-
 class PassiveDNS(enumratorBaseThreaded):
     def __init__(self, domain, subdomains=None, q=None, silent=False, verbose=True):
         subdomains = subdomains or []
         base_url = 'https://api.sublist3r.com/search.php?domain={domain}'
         self.engine_name = "PassiveDNS"
         self.q = q
-        super(PassiveDNS, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent, verbose=verbose)
+        super(PassiveDNS, self).__init__(base_url, self.engine_name, domain, subdomains, q=q, silent=silent,
+                                         verbose=verbose)
         return
 
     def req(self, url):
@@ -821,7 +826,6 @@ class PassiveDNS(enumratorBaseThreaded):
             pass
 
 
-
 class portscan():
     def __init__(self, subdomains, ports):
         self.subdomains = subdomains
@@ -845,13 +849,13 @@ class portscan():
                 pass
         self.lock.release()
         if len(openports) > 0:
-            self.subdomains_with_openports.append((host,openports))
-            #print("%s%s%s - %sFound open ports:%s %s%s%s" % (G, host, W, R, W, Y, ', '.join(openports), W))
+            self.subdomains_with_openports.append((host, openports))
+            # print("%s%s%s - %sFound open ports:%s %s%s%s" % (G, host, W, R, W, Y, ', '.join(openports), W))
         else:
             self.subdomains_with_openports.append((host, None))
-            #print("%s%s%s - %sFound open ports:%s %sNone%s" % (G, host, W, R, W, Y, W))
+            # print("%s%s%s - %sFound open ports:%s %sNone%s" % (G, host, W, R, W, Y, W))
 
-    #using mulit Threading
+    # using mulit Threading
     def run(self):
         self.lock = threading.BoundedSemaphore(value=20)
         ret = []
@@ -860,24 +864,22 @@ class portscan():
             t.start()
 
 
-
-#using pandas dataframe
+# using pandas dataframe
 def get_ip_address(hosts):
     Resolver = dns.resolver.Resolver()
     ret = []
-    #Resolver.nameservers = ['8.8.8.8', '8.8.4.4']
+    # Resolver.nameservers = ['8.8.8.8', '8.8.4.4']
     for host in hosts:
         try:
-            ip = Resolver.query(host,'A')
+            ip = Resolver.query(host, 'A')
             if ip:
                 ret.append(ip[0].to_text())
-                print('host = ',host,'\nA: ',ip[0].to_text())
+                print('host = ', host, '\nA: ', ip[0].to_text())
         except:
             ret.append(None)
-            print('host = ',host,'\n', "don't check the ip")
+            print('host = ', host, '\n', "don't check the ip")
             pass
     return ret
-
 
 
 def get_ip_class(ip_address):
@@ -886,13 +888,13 @@ def get_ip_class(ip_address):
         if ip:
             ip = int(ip.split('.')[0])
             val = 'A'
-            if ip<=127:
+            if ip <= 127:
                 val = 'A'
-            elif ip<=191:
+            elif ip <= 191:
                 val = 'B'
-            elif ip<= 223:
+            elif ip <= 223:
                 val = 'C'
-            elif ip<= 239:
+            elif ip <= 239:
                 val = 'D'
             else:
                 val = 'E'
@@ -902,47 +904,48 @@ def get_ip_class(ip_address):
     return ret
 
 
-
 def get_ssl_infomation(hosts):
     ret = []
     for name in hosts:
-    #print(name)
-        ctx = ssl.create_default_context()
+        ctx = ssl._create_unverified_context()
         with ctx.wrap_socket(socket.socket(), server_hostname=name) as s:
-            s.settimeout(0.1)
             try:
+                s.settimeout(0.4)
                 s.connect((name, 443))
-                cert = s.getpeercert()
-                ret.append((cert['issuer'][-1][0][1],cert['notBefore'],cert['notAfter']))
-
+                cert_der = s.getpeercert(True)
+                cert = x509.load_der_x509_certificate(cert_der, default_backend())
             except:
                 ret.append(None)
-                #print(traceback.format_exc().splitlines()[-1], end='\n\n')
+                s.close()
+                continue
+            if cert.issuer.get_attributes_for_oid(NameOID.COMMON_NAME):
+                issuer = cert.issuer.get_attributes_for_oid(NameOID.COMMON_NAME)[0].value
+            else:
+                issuer = None
+            not_before = str(cert.not_valid_before)
+            not_after = str(cert.not_valid_after)
+            ret.append((issuer, not_before, not_after))
             s.close()
     return ret
-
 
 
 def get_was_infomation(hosts):
     ret = []
     for domain, ports in hosts:
+        print(domain, len(ret))
         if not isinstance(ports, list) or not ports:
             ret.append(None)
-            continue      
-       #print(domain)
+            continue
         protocol = 'https' if '443' in ports else 'http'
         try:
-            response = requests.get(f"{protocol}://{domain}", verify=False, timeout=1)
+            response = requests.get(f"{protocol}://{domain}", verify=False, timeout=4)
             if 'Server' in response.headers:
                 ret.append(response.headers['Server'])
-                #print(response.headers['Server'])
             else:
                 ret.append(None)
         except:
             ret.append(None)
-            #print(traceback.format_exc().splitlines()[-1])
     return ret
-
 
 
 def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, engines):
@@ -983,7 +986,7 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
                          'ask': AskEnum,
                          'netcraft': NetcraftEnum,
                          'dnsdumpster': DNSdumpster,
-                         #'virustotal': Virustotal,
+                         # 'virustotal': Virustotal,
                          'threatcrowd': ThreatCrowd,
                          'ssl': CrtSearch,
                          'passivedns': PassiveDNS
@@ -994,8 +997,8 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
     if engines is None:
         chosenEnums = [
             BaiduEnum, YahooEnum, GoogleEnum, BingEnum, AskEnum,
-            NetcraftEnum, DNSdumpster, #Virustotal, 
-            ThreatCrowd,CrtSearch, PassiveDNS
+            NetcraftEnum, DNSdumpster,  # Virustotal,
+            ThreatCrowd, CrtSearch, PassiveDNS
         ]
     else:
         engines = engines.split(',')
@@ -1024,7 +1027,8 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
         process_count = threads
         output = False
         json_output = False
-        bruteforce_list = subbrute.print_target(parsed_domain.netloc, record_type, subs, resolvers, process_count, output, json_output, search_list, verbose)
+        bruteforce_list = subbrute.print_target(parsed_domain.netloc, record_type, subs, resolvers, process_count,
+                                                output, json_output, search_list, verbose)
 
     subdomains = search_list.union(bruteforce_list)
 
@@ -1033,7 +1037,7 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
 
         if not silent:
             print(Y + "[-] Total Unique Subdomains Found: %s" % len(subdomains) + W)
-        #ports defalut = '80, 443'
+        # ports defalut = '80, 443'
         if ports:
             if not silent:
                 print(G + "[-] Start port scan now for the following ports: %s%s" % (Y, ports) + W)
@@ -1045,23 +1049,22 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
                 print(G + subdomain + W)
         if savefile:
             if ports:
-                #thread의 실행이 모두 끝난 뒤에
+                # thread의 실행이 모두 끝난 뒤에
                 mainThread = threading.currentThread()
                 for thread in threading.enumerate():
                     if thread is not mainThread:
                         thread.join()
-                #값이 있다면
+                # 값이 있다면
                 if pscan.subdomains_with_openports:
                     subdomains = pscan.subdomains_with_openports
-                    df = pd.DataFrame(subdomains, columns=['domain','ports'])
+                    df = pd.DataFrame(subdomains, columns=['domain', 'ports'])
                     df['ip_address'] = get_ip_address(df['domain'].to_list())
                     df['ip_class'] = get_ip_class(df['ip_address'].to_list())
                     df['ssl_infomation'] = get_ssl_infomation(df['domain'].to_list())
-                    #df['WAS'] = get_was_infomation(zip(df['domain'].to_list(), df['ports'].to_list()))
+                    df['WAS'] = get_was_infomation(df[['domain', 'ports']].values.tolist())
                     write_file(savefile, df)
-    
-    return subdomains
 
+    return subdomains
 
 
 def interactive():
@@ -1077,8 +1080,9 @@ def interactive():
         verbose = True
     if args.no_color:
         no_color()
-    res = main(domain, threads, savefile, ports, silent=False, verbose=verbose, enable_bruteforce=enable_bruteforce, engines=engines)
+    res = main(domain, threads, savefile, ports, silent=False, verbose=verbose, enable_bruteforce=enable_bruteforce,
+               engines=engines)
+
 
 if __name__ == "__main__":
     interactive()
-
