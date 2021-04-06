@@ -10,6 +10,7 @@
 #### 파일 저장 방식을 pandas를 이용하여 csv 형태의 파일을 저장할 수 있는 확장자 권장
 ##### 사용예시
 ![image](https://user-images.githubusercontent.com/34308156/113734551-6432a180-9736-11eb-8bdb-40e1720241d9.png)
+![image](https://user-images.githubusercontent.com/34308156/113735381-2aae6600-9737-11eb-956d-7ce0687ee90d.png)
 ##### domain : 서브 도메인 이름을 저장하는 컬럼
 ##### ports : 기본 80, 443에 대하여 해당 도메인에 접속 가능한 포트 정보 (-p 원하는포트 로 변경 가능), 없을 경우 NaN
 ##### ip_address : 해당 도메인의 ip 주소를 나타내는 컬럼, 없을 경우 NaN
