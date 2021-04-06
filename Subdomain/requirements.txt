@@ -1,0 +1,7 @@
+argparse
+cryptography
+dnspython
+matplotlib
+urllib3
+requests
+pandas
