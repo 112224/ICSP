@@ -1,0 +1,296 @@
+domain,ports,ip_address,ip_class
+as.dongguk.edu,,,
+www.at.dongguk.edu,,,
+aiicc.dongguk.edu,"[80, 443]",210.94.199.26,C
+ai.dongguk.edu,"[80, 443]",210.94.194.114,C
+8877.dongguk.edu,"[80, 443]",210.94.176.160,C
+antispam.dongguk.edu,"[80, 443]",210.94.190.61,C
+ace.dongguk.edu,"[80, 443]",115.68.17.172,A
+acc.dongguk.edu,"[80, 443]",210.94.176.204,C
+art.dongguk.edu,"[80, 443]",210.94.176.205,C
+www.dongguk.edu,"[80, 443]",210.94.190.35,C
+at.dongguk.edu,"[80, 443]",183.111.182.200,B
+admission.dongguk.edu,"[80, 443]",210.94.190.35,C
+archi.dongguk.edu,"[80, 443]",210.94.176.204,C
+bicdata.dongguk.edu,,,
+bfsl.dongguk.edu,"[80, 443]",183.111.174.43,B
+www.bnm.dongguk.edu,,,
+irbe.dongguk.edu,"[80, 443]",210.94.176.206,C
+bmc.dongguk.edu,"[80, 443]",210.94.176.206,C
+bk21plus.dongguk.edu,"[80, 443]",210.94.176.205,C
+bnm.dongguk.edu,"[80, 443]",183.111.174.42,B
+bigdata.dongguk.edu,"[80, 443]",210.94.185.234,C
+bio.dongguk.edu,"[80, 443]",210.94.176.204,C
+booklib.dongguk.edu,"[80, 443]",210.94.174.198,C
+bmclife.dongguk.edu,"[80, 443]",210.94.176.205,C
+cblab.dongguk.edu,[80],210.94.194.53,C
+caps.dongguk.edu,"[80, 443]",210.94.210.250,C
+change.dongguk.edu,,,
+cdc.dongguk.edu,"[80, 443]",210.94.176.129,C
+cdcold.dongguk.edu,"[80, 443]",210.94.176.129,C
+www.chembio.dongguk.edu,,,
+cerslab.dongguk.edu,"[80, 443]",210.94.185.234,C
+chembio.dongguk.edu,"[80, 443]",183.111.174.42,B
+chembio-ck.dongguk.edu,"[80, 443]",210.94.176.205,C
+chembioeng.dongguk.edu,"[80, 443]",210.94.176.204,C
+www.comm.dongguk.edu,,,
+cilab.dongguk.edu,"[80, 443]",210.94.194.163,C
+civil.dongguk.edu,"[80, 443]",210.94.176.204,C
+china.dongguk.edu,"[80, 443]",210.94.176.204,C
+clinic.dongguk.edu,"[80, 443]",210.94.176.160,C
+comm.dongguk.edu,[80],110.10.129.180,A
+cnc.dongguk.edu,"[80, 443]",210.94.176.101,C
+www.dei.dongguk.edu,,,
+counseling.dongguk.edu,"[80, 443]",210.94.176.206,C
+cse.dongguk.edu,"[80, 443]",210.94.176.204,C
+www.dgucoop.dongguk.edu,,,
+dcol.dongguk.edu,"[80, 443]",210.94.174.100,C
+dee.dongguk.edu,"[80, 443]",210.94.176.204,C
+dei.dongguk.edu,"[80, 443]",183.111.182.203,B
+db.dongguk.edu,"[80, 443]",210.94.194.150,C
+dgucoop.dongguk.edu,"[80, 443]",112.175.247.164,A
+deis.dongguk.edu,"[80, 443]",210.94.190.47,C
+www.dgyec.dongguk.edu,,,
+dgyec.dongguk.edu,[80],210.94.176.137,C
+www.dui.dongguk.edu,,,
+dic.dongguk.edu,"[80, 443]",210.94.176.203,C
+dharma.dongguk.edu,"[80, 443]",210.94.176.203,C
+dmicweb.dongguk.edu,"[80, 443]",211.115.80.248,C
+dong-ari.dongguk.edu,"[80, 443]",210.94.190.75,C
+dui.dongguk.edu,"[80, 443]",183.111.182.204,B
+dongari.dongguk.edu,"[80, 443]",210.94.190.75,C
+duce.dongguk.edu,"[80, 443]",210.94.176.204,C
+dume.dongguk.edu,"[80, 443]",210.94.176.204,C
+www.dutebm.dongguk.edu,,,
+www.duterm.dongguk.edu,,,
+www.dvic.dongguk.edu,,,
+durib.dongguk.edu,"[80, 443]",210.94.176.203,C
+dutebm.dongguk.edu,"[80, 443]",183.111.174.43,B
+duterm.dongguk.edu,"[80, 443]",183.111.174.42,B
+dutv.dongguk.edu,"[80, 443]",210.94.176.203,C
+ebook.dongguk.edu,"[80, 443]",210.94.174.15,C
+dvic.dongguk.edu,"[80, 443]",183.111.174.98,B
+ebook2.dongguk.edu,"[80, 443]",210.94.174.15,C
+eclasstest.dongguk.edu,,,
+dgs.dongguk.edu,[80],210.94.219.31,C
+eclass.dongguk.edu,"[80, 443]",210.94.190.107,C
+eclass2.dongguk.edu,"[80, 443]",210.94.190.108,C
+www.ei.dongguk.edu,,,
+ecr.dongguk.edu,"[80, 443]",210.94.223.107,C
+edu.dongguk.edu,"[80, 443]",210.94.176.205,C
+ei.dongguk.edu,"[80, 443]",183.111.182.204,B
+edulife.dongguk.edu,"[80, 443]",210.94.176.101,C
+www.engineer.dongguk.edu,,,
+emsl.dongguk.edu,"[80, 443]",210.94.172.194,C
+engineer.dongguk.edu,"[80, 443]",112.175.50.180,A
+fc.dongguk.edu,"[80, 443]",210.94.176.101,C
+fcdev.dongguk.edu,"[80, 443]",210.94.176.101,C
+filer.dongguk.edu,"[80, 443]",210.94.185.240,C
+fin.dongguk.edu,"[80, 443]",210.94.176.205,C
+geoedu.dongguk.edu,"[80, 443]",210.94.176.204,C
+gifted.dongguk.edu,"[80, 443]",210.94.176.205,C
+gaia.dongguk.edu,"[80, 443]",183.111.182.200,B
+gm.dongguk.edu,"[80, 443]",210.94.176.205,C
+graphic.dongguk.edu,"[80, 443]",210.94.176.229,C
+graphics.dongguk.edu,"[80, 443]",203.245.44.42,C
+gs.dongguk.edu,"[80, 443]",210.94.176.203,C
+grrc.dongguk.edu,"[80, 443]",210.94.176.203,C
+gsca.dongguk.edu,"[80, 443]",210.94.176.205,C
+gsl.dongguk.edu,"[80, 443]",210.94.176.66,C
+gt.dongguk.edu,"[80, 443]",210.94.176.101,C
+gspa.dongguk.edu,"[80, 443]",210.94.176.203,C
+gmailinfo.dongguk.edu,"[80, 443]",172.217.161.179,B
+gw02.dongguk.edu,"[80, 443]",210.94.176.224,C
+gw01.dongguk.edu,"[80, 443]",210.94.176.214,C
+gwmail.dongguk.edu,"[80, 443]",210.94.176.200,C
+gwmail01.dongguk.edu,"[80, 443]",210.94.190.37,C
+hkplus.dongguk.edu,"[80, 443]",183.111.165.165,B
+homeedu.dongguk.edu,"[80, 443]",210.94.176.204,C
+hometax.dongguk.edu,"[80, 443]",210.94.176.70,C
+food.dongguk.edu,"[80, 443]",210.94.176.204,C
+hri.dongguk.edu,[80],210.94.194.140,C
+humanrights.dongguk.edu,"[80, 443]",210.94.176.206,C
+www.icampus.dongguk.edu,,,
+iceed.dongguk.edu,"[80, 443]",210.94.176.205,C
+ics.dongguk.edu,"[80, 443]",183.111.174.43,B
+ice.dongguk.edu,"[80, 443]",210.94.176.204,C
+www.ics.dongguk.edu,,,
+icampus.dongguk.edu,"[80, 443]",183.111.199.197,B
+ijbtc.dongguk.edu,[80],54.180.73.3,A
+ilove.dongguk.edu,"[80, 443]",210.94.161.115,C
+www.interlang.dongguk.edu,,,
+innodata.dongguk.edu,"[80, 443]",112.175.85.247,A
+interlang.dongguk.edu,"[80, 443]",183.111.182.196,B
+interlangen.dongguk.edu,"[80, 443]",210.94.176.206,C
+interlangcn.dongguk.edu,"[80, 443]",210.94.176.206,C
+intern.dongguk.edu,[80],210.94.176.137,C
+internship.dongguk.edu,"[80, 443]",210.94.161.161,C
+ipp.dongguk.edu,"[80, 443]",210.94.161.161,C
+ipsi.dongguk.edu,"[80, 443]",211.174.52.72,C
+www.bfsl.dongguk.edu,,,
+ise.dongguk.edu,"[80, 443]",210.94.176.205,C
+isms.dongguk.edu,[80],210.94.176.114,C
+it.dongguk.edu,"[80, 443]",210.94.176.206,C
+itcec.dongguk.edu,"[80, 443]",210.94.176.205,C
+its.dongguk.edu,,,
+itrade.dongguk.edu,"[80, 443]",210.94.176.204,C
+jcrc.dongguk.edu,"[80, 443]",210.94.176.203,C
+ibc.dongguk.edu,"[80, 443]",210.94.176.205,C
+job.dongguk.edu,"[80, 443]",211.172.232.192,C
+justice.dongguk.edu,"[80, 443]",210.94.176.205,C
+kabc.dongguk.edu,"[80, 443]",210.94.174.13,C
+kinlab.dongguk.edu,"[80, 443]",34.80.190.141,A
+*.kproxy.dongguk.edu,,210.94.174.194,C
+www.kinlab.dongguk.edu,"[80, 443]",34.80.190.141,A
+lib.dongguk.edu,"[80, 443]",210.94.174.198,C
+libmid.dongguk.edu,"[80, 443]",210.94.174.16,C
+libsrv.dongguk.edu,,,
+life.dongguk.edu,"[80, 443]",210.94.176.205,C
+lifescience.dongguk.edu,"[80, 443]",210.94.176.204,C
+lincplus.dongguk.edu,"[80, 443]",112.175.50.209,A
+lotusfood.dongguk.edu,"[80, 443]",210.94.176.203,C
+m.dongguk.edu,"[80, 443]",210.94.190.46,C
+macl.dongguk.edu,"[80, 443]",183.111.174.43,B
+www.macl.dongguk.edu,,,
+macs.dongguk.edu,"[80, 443]",210.94.161.238,C
+mail.dongguk.edu,"[80, 443]",210.94.190.36,C
+jr.dongguk.edu,,,
+mailinfo.dongguk.edu,"[80, 443]",142.250.66.115,B
+apel.dongguk.edu,,210.94.222.176,C
+abc.dongguk.edu,[80],210.94.174.12,C
+abchome.dongguk.edu,[80],210.94.174.12,C
+3d.dongguk.edu,,210.94.199.44,C
+manhae.dongguk.edu,"[80, 443]",210.94.176.203,C
+www.manhae2003.dongguk.edu,,,
+manhae2003.dongguk.edu,"[80, 443]",183.111.182.212,B
+marte.dongguk.edu,"[80, 443]",183.111.174.10,B
+mba.dongguk.edu,"[80, 443]",210.94.176.205,C
+mbooklib.dongguk.edu,"[80, 443]",210.94.174.198,C
+mbt.dongguk.edu,"[80, 443]",210.94.176.204,C
+www.med.dongguk.edu,,,
+mecha.dongguk.edu,"[80, 443]",210.94.176.206,C
+me.dongguk.edu,"[80, 443]",210.94.176.204,C
+med.dongguk.edu,"[80, 443]",183.111.174.94,B
+meic.dongguk.edu,[80],210.94.203.42,C
+mip.dongguk.edu,"[80, 443]",183.111.174.113,B
+mis.dongguk.edu,"[80, 443]",210.94.176.204,C
+mme.dongguk.edu,"[80, 443]",210.94.178.145,C
+a.mme.dongguk.edu,,210.94.172.186,C
+pub.mme.dongguk.edu,"[80, 443]",210.94.172.184,C
+mo.dongguk.edu,"[80, 443]",210.94.190.35,C
+model.dongguk.edu,"[80, 443]",112.175.85.243,A
+eml.dongguk.edu,[80],210.94.219.129,C
+movie.dongguk.edu,"[80, 443]",112.175.50.220,A
+epf.dongguk.edu,[80],210.94.161.177,C
+www.movie.dongguk.edu,,,
+ftceo.dongguk.edu,,210.94.222.162,C
+www.mpp.dongguk.edu,,,
+nbt.dongguk.edu,"[80, 443]",183.111.174.42,B
+www.nbt.dongguk.edu,,,
+nf.dongguk.edu,"[80, 443]",210.94.161.247,C
+ngw.dongguk.edu,,,
+mypc.dongguk.edu,,,
+nita.dongguk.edu,"[80, 443]",183.111.141.34,B
+normscience.dongguk.edu,"[80, 443]",210.94.176.203,C
+mpp.dongguk.edu,"[80, 443]",52.231.167.40,A
+ns.dongguk.edu,[80],210.94.190.7,C
+ns2.dongguk.edu,"[80, 443]",210.94.190.5,C
+nuixitrc.dongguk.edu,"[80, 443]",121.78.246.41,A
+ikb.dongguk.edu,[80],210.94.174.12,C
+ocw.dongguk.edu,"[80, 443]",210.94.202.110,C
+ocw2.dongguk.edu,"[80, 443]",210.94.202.111,C
+ols.dongguk.edu,"[80, 443]",210.94.176.180,C
+oz.dongguk.edu,,,
+pa.dongguk.edu,"[80, 443]",210.94.176.204,C
+pe.dongguk.edu,"[80, 443]",210.94.176.204,C
+pharm.dongguk.edu,"[80, 443]",210.94.176.205,C
+irobot.dongguk.edu,[80],210.94.189.222,C
+www.pharmind.dongguk.edu,,,
+pharmind.dongguk.edu,"[80, 443]",183.111.182.219,B
+plass.dongguk.edu,"[80, 443]",210.94.194.79,C
+police.dongguk.edu,"[80, 443]",210.94.176.204,C
+www.police.dongguk.edu,,,
+portal.dongguk.edu,"[80, 443]",210.94.190.44,C
+mail2.dongguk.edu,[80],210.94.161.220,C
+www.model.dongguk.edu,,,
+qsrc.dongguk.edu,,210.94.179.219,C
+r-find.dongguk.edu,"[80, 443]",210.94.176.205,C
+rnd.dongguk.edu,"[80, 443]",210.94.176.205,C
+argon.dongguk.edu,,210.94.185.245,C
+buddha.dongguk.edu,,210.94.174.186,C
+rule.dongguk.edu,"[80, 443]",210.94.161.224,C
+safe.dongguk.edu,"[80, 443]",210.94.176.128,C
+azul.dongguk.edu,,210.94.185.241,C
+class.dongguk.edu,,210.94.185.235,C
+scholarship.dongguk.edu,"[80, 443]",210.94.176.205,C
+sanhak.dongguk.edu,"[80, 443]",210.94.176.131,C
+sba.dongguk.edu,"[80, 443]",210.94.176.205,C
+science.dongguk.edu,"[80, 443]",210.94.176.205,C
+dguk.dongguk.edu,,115.89.144.254,A
+ecampus.dongguk.edu,,49.238.224.51,A
+eduedi.dongguk.edu,,210.94.192.83,C
+www.scps.dongguk.edu,"[80, 443]",34.80.190.141,A
+security.dongguk.edu,"[80, 443]",210.94.176.101,C
+shprc.dongguk.edu,"[80, 443]",210.94.176.203,C
+scps.dongguk.edu,"[80, 443]",34.80.190.141,A
+mgw.ngw.dongguk.edu,[80],210.94.176.242,C
+se.dongguk.edu,"[80, 443]",34.80.190.141,A
+imap.dongguk.edu,,210.94.190.64,C
+otrcid.dongguk.edu,[80],218.38.13.29,C
+pdalgo.dongguk.edu,,210.94.194.66,C
+sophia.dongguk.edu,"[80, 443]",210.94.176.204,C
+sotong.dongguk.edu,"[80, 443]",210.94.176.102,C
+*.sproxy.dongguk.edu,,210.94.174.199,C
+lps3.scholar.google.com.sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C
+pos.libsteps.com.sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C
+www.dbpia.co.kr.sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C
+srd.dongguk.edu,"[80, 443]",210.94.190.35,C
+portal1.dongguk.edu,[80],210.94.161.155,C
+startup.dongguk.edu,"[80, 443]",13.124.192.105,A
+www.startup.dongguk.edu,,,
+step.dongguk.edu,"[80, 443]",222.122.47.38,C
+studyen.dongguk.edu,"[80, 443]",210.94.176.205,C
+sugang.dongguk.edu,,,
+sung.dongguk.edu,"[80, 443]",210.94.178.145,C
+superintelligence.dongguk.edu,"[80, 443]",210.94.178.145,C
+www.se.dongguk.edu,"[80, 443]",34.80.190.141,A
+sw.dongguk.edu,"[80, 443]",49.247.5.30,A
+swas.dongguk.edu,[80],210.94.161.153,C
+swc.dongguk.edu,"[80, 443]",210.94.176.101,C
+templefood.dongguk.edu,"[80, 443]",210.94.176.203,C
+tportal.dongguk.edu,,,
+theatre.dongguk.edu,"[80, 443]",210.94.176.204,C
+libproxy.dongguk.edu,,210.94.174.220,C
+trans-division.dongguk.edu,"[80, 443]",112.175.50.217,A
+ucloud-lab.dongguk.edu,"[80, 443]",210.94.185.168,C
+udrims.dongguk.edu,"[80, 443]",210.94.190.34,C
+union.dongguk.edu,"[80, 443]",183.111.182.216,B
+www.union.dongguk.edu,,,
+uniondev.dongguk.edu,,,
+vn.dongguk.edu,"[80, 443]",210.94.176.205,C
+vc.dongguk.edu,"[80, 443]",210.94.190.50,C
+vod.dongguk.edu,"[80, 443]",211.174.53.183,C
+www.who.dongguk.edu,,,
+volunteers.dongguk.edu,"[80, 443]",210.94.176.206,C
+www.who2.dongguk.edu,,,
+who2.dongguk.edu,"[80, 443]",183.111.174.69,B
+wudrims.dongguk.edu,"[80, 443]",210.94.190.48,C
+who.dongguk.edu,"[80, 443]",183.111.182.206,B
+portal2.dongguk.edu,[80],210.94.161.165,C
+scsd.dongguk.edu,"[80, 443]",210.94.176.206,C
+maker.dongguk.edu,,210.94.199.180,C
+rojo.dongguk.edu,,210.94.185.233,C
+media.dongguk.edu,,210.94.174.77,C
+linux.mme.dongguk.edu,,210.94.172.185,C
+unix.mme.dongguk.edu,,210.94.178.125,C
+site.dongguk.edu,[80],210.94.161.110,C
+smartid.dongguk.edu,[80],210.94.176.58,C
+soc.dongguk.edu,,210.94.203.169,C
+pop3.dongguk.edu,,210.94.190.64,C
+wnl.dongguk.edu,,210.94.172.82,C
+smartceo.dongguk.edu,,210.94.222.162,C
+rotc.dongguk.edu,,52.79.113.75,A
+scratch.dongguk.edu,,210.94.185.242,C
+smdlab.dongguk.edu,,210.94.164.150,C
+smtp.dongguk.edu,,210.94.190.64,C
+srl.dongguk.edu,,210.94.162.93,C
