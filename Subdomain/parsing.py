@@ -2,6 +2,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from collections import deque
 import traceback
+import requests
 
 
 def search_tag(path):
@@ -11,16 +12,18 @@ def search_tag(path):
         path_name = path.replace('/', '_')
         path_name = path_name.replace('?', '_')
         with open(f"ahref{path_name}.txt", "w", encoding='UTF-8') as f:  # ,기준으로 text, url
-
-            # http://ssms.dongguk.edu/
-            # https://stackoverflow.com/ or https://stackoverflow.com/questions/26544091/checking-if-type-list-in-python
-            # ssms 사이트 자체에는 form 이 없어서 옆의 사이트들로도 테스트
+            f.write("text, url 순\n\n")
             absolute_path = ROOT + path
             print("absolute_path :", absolute_path)
-            html = urlopen(absolute_path, timeout=4)  # ssms가 현재 down상태인데 site가 down인 경우를 위해서 except 구문추가
-            soup = BeautifulSoup(html, "html.parser")
+
+            ###########################################
+            res=session.get(absolute_path,timeout=4)        #기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
+            soup = BeautifulSoup(res.content, "html.parser")
+            ###############################################
+
             hreflist = []
             formlist = []
+            inputlist=[]
 
             attr = ['img', 'i']
             for link in soup.find_all('a'):
@@ -63,7 +66,8 @@ def search_tag(path):
                 f.write(url)
                 f.write("\n")
 
-        with open(f"form{path_name}.txt", "w", encoding='UTF-8') as f: # method, action, input type, input placeholder 순
+        with open(f"form{path_name}.txt", "w", encoding='UTF-8') as f: # method, action순
+            f.write("method, action 순\n\n")
             for link in soup.find_all('form'):
                 method = link.get('method')
                 action = None
@@ -72,25 +76,49 @@ def search_tag(path):
                     action = link.get('action')
                 if action is None:
                     action = "None"
-                # if link.find('input')!=None: t=link.find('input').get('type')       #for 문으로 findall(form) 추가해줘야함
-                # if t==None :t="None"
-                # ph=link.find('input').get('placeholder')
-                # if ph==None :ph="None"
-                else:
-                    t = "None"
-                    ph = "None"
                 tmplist = (method, action)
-                # tmplist.append(t)   #input type = t
-                # tmplist.append(ph)  #input placeholder ph
                 formlist.append(tmplist)
                 cnt = 1
-                for i in tmplist:
-                    f.write(i)
-                    if cnt % 4 == 0:
-                        f.write("\n")
-                    else:
-                        f.write(',')
-                    cnt += 1
+                f.write(action)
+                f.write(", ")
+                f.write(method)
+                f.write("\n")
+
+        with open(f"input{path_name}.txt", "w", encoding='UTF-8') as f: # text,type,placeholder 순
+            f.write("text, type, placeholder 순\n\n")
+            for link in soup.find_all('input'):
+                text, type, placeholder = link.text.strip(), link.get('type'), link.get('placeholder')
+
+                if type == None :
+                    type="None"
+                if placeholder==None:
+                    placeholder="None"
+
+                tmplist = (text, type,placeholder)
+                inputlist.append(tmplist)
+                f.write(text)
+                f.write(", ")
+                f.write(type)
+                f.write(", ")
+                f.write(placeholder)
+
+                f.write("\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     except:
         print(traceback.format_exc().splitlines()[-1])
 
@@ -99,6 +127,22 @@ if __name__ == "__main__":
     ROOT = "http://ssms.dongguk.edu"
     visited = set()
     queue = deque([""])
+
+########################################################
+    login_url='http://ssms.dongguk.edu/mbrmgt/DGU121'
+    craw_url='http://ssms.dongguk.edu/pjmng/DGU522'
+
+    values = {
+        'loginType': 'student',        #student, mentor,instructor,assistant
+        'loginId': '2018113581',       #학생, 멘토, 교수, 조교 4가지 logintype
+        'loginPwd': 'caps1234'
+        }
+
+    session = requests.session()
+    res=session.post(login_url,data=values)
+    res.raise_for_status()  
+######################################################  login 부분 student이외 계정을 받으면 for loop로 다시 수정
+
     while queue:
         u = queue.popleft()
         if u not in visited:
