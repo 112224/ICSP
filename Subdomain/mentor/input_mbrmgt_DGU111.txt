@@ -1,5 +1,0 @@
-text, type, placeholder 순
-
-, password, 현재 비밀번호
-, password, 새 비밀번호
-, password, 새 비밀번호 확인

@@ -1,4 +1,0 @@
-method, action 순
-
-None, None
-None, None

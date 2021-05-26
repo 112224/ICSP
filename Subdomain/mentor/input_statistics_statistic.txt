@@ -1,3 +1,0 @@
-text, type, placeholder 순
-
-, submit, None
