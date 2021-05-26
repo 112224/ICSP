@@ -1,0 +1,4 @@
+text, type, placeholder 순
+
+, hidden, None
+, submit, None

@@ -1,0 +1,14 @@
+text, type, placeholder 순
+
+, text, Project Name
+, text, Project Outline
+, text, Keyword 1
+, text, Keyword 2
+, text, Keyword 3
+, text, Recommended Professor
+, text, None
+, file, None
+, file, None
+, file, None
+, hidden, None
+, submit, None

@@ -1,0 +1,6 @@
+text, url 순
+
+공지사항, /msgbrd/DGU701
+양식함, /msgbrd/ReportSampleBoard
+회원가입 Class : fa fa-user-plus, /mbrmgt/DGU101
+로그인 Class : fa fa-fw fa-sign-in, /mbrmgt/DGU121

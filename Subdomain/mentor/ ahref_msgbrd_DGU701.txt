@@ -1,0 +1,55 @@
+text, url 순
+
+공지사항, /msgbrd/DGU701
+양식함, /msgbrd/ReportSampleBoard
+계획서 작성, /pjmake/DGU301
+계획서 관리, /pjmake/DGU311
+팀 선정, /teammgt/DGU221
+팀 확인, /teammgt/DGU222
+보고서 제출, /pjmng/DGU522
+만족도조사서, /eval/DGU601
+실적 조회, /statistics/statistic
+마이페이지 Class : fa fa-user, /mbrmgt/DGU111
+로그아웃 Class : fa fa-fw fa-sign-out, /mbrmgt/DGU141
+2021학년도 1학기 ICIP&캡스톤디자인 일정 안내, /msgbrd/show/47
+2021학년도 1학기 ICIP&캡스톤디자인(종합설계) 주제 문의사항 관련 안내, /msgbrd/show/46
+2020 겨울 Energize Dongguk 융합페어 자료집, /msgbrd/show/44
+2020 가을 ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/43
+2020 여름 ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/42
+2020 겨울 Energize Dongguk 융합페어 수상 결과 안내, /msgbrd/show/45
+2020 겨울 Energize Dongguk 융합페어 발표순서 안내, /msgbrd/show/41
+2020학년도 학회참가(논문) 지원 관련 안내, /msgbrd/show/40
+매칭관련 일정, /msgbrd/show/39
+[New]산학연계프로젝트 멘토(기업담당자, 기술사) 운용메뉴얼, /msgbrd/show/38
+[New]산학연계프로젝트 멘티(학생) 운용메뉴얼, /msgbrd/show/37
+2017~2019년도 ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/36
+2020 03 12  조교간담회 자료, /msgbrd/show/34
+[멘토] 멘토 대상 질의응답 입니다., /msgbrd/show/35
+[참고자료] 산학관리시스템 매뉴얼, /msgbrd/show/33
+2019년 2학기 간담회 설명자료, /msgbrd/show/32
+2019학년도 1학기 캡스톤디자인  결과발표회 수상자 자료 제출안내, /msgbrd/show/31
+학부생을 위한 논문작성법 동영상강좌, /msgbrd/show/29
+2018년도 겨울 (2학기) ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/23
+2019학년도 1학기 캡스톤디자인  결과발표회 자료 제출안내, /msgbrd/show/28
+2019학년도 학회참가(논문) 지원 관련., /msgbrd/show/27
+2019년 제11회 TOPCIT 정기평가(5월18일), /msgbrd/show/26
+2019년도 학술발표대회소개 및 학부생 논문작성법, /msgbrd/show/25
+2019년도 1학기 캡스톤디자인 매칭데이 연기(2019년 3월 22일(금)), /msgbrd/show/24
+2018년도 가을 (2학기)  ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/22
+[필독] 정보통신공학과 Pre-Matching 관련 공지사항, /msgbrd/show/21
+로그인&사이트 오류 시 플러스친구 dgu_ssms로 카톡 바랍니다., /msgbrd/show/13
+[필독] 멘토 및 학생 프로젝트 진행시 필수사항 정리, /msgbrd/show/12
+동국대학교 산학연계프로젝트 오픈합니다., /msgbrd/show/2
+2019학년도 1학기 조기매칭 관련 (정보통신공학전공), /msgbrd/show/20
+조기매칭 자료, /msgbrd/show/19
+LINC+ 사업단 재료비 지원 관련 신청서류 (~10월 19일까지), /msgbrd/show/18
+산학연계프로젝트 멘토(기업담당자, 기술사) 운용메뉴얼, /msgbrd/show/3
+2018년도 국내추계학술대회 안내(학부생 논문제출)_마감연기30일까지, /msgbrd/show/17
+SW중심대학 지원사업 논문 사사표기, /msgbrd/show/16
+프로젝트 지원기간이 9/11(화) 23:59분으로 연기되었습니다., /msgbrd/show/15
+인증 메일 못 받은 경우 플러스친구 dgu_ssms로 카톡 바랍니다., /msgbrd/show/14
+2018년도 1학기  ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/6
+2017학년도 산학연계프로젝트 자료집, /msgbrd/show/10
+융합소프트웨어교육원 산학연구센터 프로그램 소개, /msgbrd/show/9
+2018학년도 2학기 산학연계 캡스톤디자인 매칭데이, /msgbrd/show/8
+2018년 2학기 산학 연계 캡스톤디자인  프로젝트 주제제안 업체 모집, /msgbrd/show/7

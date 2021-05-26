@@ -4,7 +4,7 @@ from collections import deque
 import traceback
 import requests
 import os
-
+import pandas as pd
 
 def search_tag(path):
     visited.add(path)
@@ -17,7 +17,7 @@ def search_tag(path):
             print("absolute_path :", absolute_path)
             
             ###########################################
-            res=session.get(absolute_path,timeout=4)        #기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
+            res = session.get(absolute_path, timeout=4)        #기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
             soup = BeautifulSoup(res.content, "html.parser")
             ###############################################
 
@@ -78,7 +78,6 @@ def search_tag(path):
                     action = "None"
                 tmplist = (method, action)
                 formlist.append(tmplist)
-                cnt = 1
                 f.write(action)
                 f.write(", ")
                 f.write(method)
@@ -89,10 +88,10 @@ def search_tag(path):
             for link in soup.find_all('input'):
                 text, type, placeholder = link.text.strip(), link.get('type'), link.get('placeholder')
 
-                if type == None :
-                    type="None"
-                if placeholder==None:
-                    placeholder="None"
+                if not type:
+                    type = "None"
+                if not placeholder:
+                    placeholder = "None"
 
                 tmplist = (text, type,placeholder)
                 inputlist.append(tmplist)
@@ -112,7 +111,7 @@ if __name__ == "__main__":
     curdir=os.getcwd()
     logintypes=['/student', '/mentor']#, 'instructor' ,'assistant']
     for folder in logintypes:
-        directory= curdir+folder
+        directory = curdir + folder
         if not os.path.exists(directory):
             os.makedirs(directory)
 
@@ -135,11 +134,11 @@ for login in loginfo:
     ROOT = "http://ssms.dongguk.edu"
     visited = set()
     queue = deque([""])
-    login_url='http://ssms.dongguk.edu/mbrmgt/DGU121'
+    login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
     session = requests.session()
-    res=session.post(login_url,data=login)
+    res = session.post(login_url, data=login)
     res.raise_for_status() 
-    folder=login.get('loginType')+'/'
+    folder = login.get('loginType') + '/'
     while queue:
         u = queue.popleft()
         if u not in visited:

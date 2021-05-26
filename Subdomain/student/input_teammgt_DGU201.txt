@@ -1,0 +1,5 @@
+text, type, placeholder 순
+
+, text, 팀 이름
+, submit, None
+, button, None

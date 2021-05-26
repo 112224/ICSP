@@ -1,0 +1,108 @@
+text, url 순
+
+공지사항, /msgbrd/DGU701
+양식함, /msgbrd/ReportSampleBoard
+팀 생성, /teammgt/DGU201
+나의 팀, /teammgt/DGU211
+프로젝트 지원, /pjapply/DGU401
+프로젝트 목록, /pjapply/DGU411
+보고서 제출, /pjmng/DGU522
+만족도조사서, /eval/DGU601
+실적 조회, /statistics/statistic
+마이페이지 Class : fa fa-user, /mbrmgt/DGU111
+로그아웃 Class : fa fa-fw fa-sign-out, /mbrmgt/DGU141
+ Class : fa fa-plus-circle, /msgbrd/DGU701
+2021학년도 1학기 ICIP&캡스톤디자인 일정 안내, /msgbrd/show/47
+2021학년도 1학기 ICIP&캡스톤디자인(종합설계) 주제 문의사항 관련 안내, /msgbrd/show/46
+2020 겨울 Energize Dongguk 융합페어 자료집, /msgbrd/show/44
+2020 가을 ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/43
+2020 여름 ICIP&캡스톤디자인 결과발표회 자료집, /msgbrd/show/42
+2020 겨울 Energize Dongguk 융합페어 수상 결과 안내, /msgbrd/show/45
+2020 겨울 Energize Dongguk 융합페어 발표순서 안내, /msgbrd/show/41
+2020학년도 학회참가(논문) 지원 관련 안내, /msgbrd/show/40
+매칭관련 일정, /msgbrd/show/39
+[New]산학연계프로젝트 멘토(기업담당자, 기술사) 운용메뉴얼, /msgbrd/show/38
+ Class : fa fa-plus-circle, /msgbrd/ReportSampleBoard
+개인역량 점검표, /msgbrd/ReportSampleBoard 
+주제제안서, /msgbrd/ReportSampleBoard 
+수행계획서, /msgbrd/ReportSampleBoard 
+멘토링보고서, /msgbrd/ReportSampleBoard 
+최종보고서, /msgbrd/ReportSampleBoard 
+특허출원명세서, /msgbrd/ReportSampleBoard 
+프로그램 등록명세서, /msgbrd/ReportSampleBoard 
+발명신고서, /msgbrd/ReportSampleBoard 
+발명합의서, /msgbrd/ReportSampleBoard 
+사용메뉴얼, /msgbrd/ReportSampleBoard 
+DR센서를 통한 정밀 위치자세 전송(LTE-M)개발, /pj/380
+React.js 활용한 데이터 시각화 개발 프로젝트, /pj/485
+XAI 데이터셋 구축 및 알고리즘 트레이닝, /pj/440
+간호보조로봇 개발, /pj/438
+머신러닝 주식 포트폴리오 최적화, /pj/476
+인공지능을 이용한 3D Mesh 형상 처리, /pj/442
+수집 데이터 특성에 따른 클라우드 네이티브 기반 데이터 플랫폼 자가 구성(Self-configurable) 기술 (장기), /pj/459
+IoT 보안 강화를 위한 펌웨어 보안 취약점 분석 시스템, /pj/456
+차세대 보안관제 영역인 SOAR(Security Orchestration Automation & Response)환경에서의 Playbook CASE Matching, /pj/430
+FMCW 레이더 센서를 활용한 소방안전 인명구조 응용 프로그램 개발, /pj/463
+보안컨테이너 구축, /pj/439
+Cloud ECM 서버 파일 Auto-Migration Service, /pj/455
+블록체인 기반 맞춤형 만성질환자 건강관리, /pj/449
+보이싱 피싱 대응을 위한 금융앱 사칭 멀웨어 탐지 시스템 개발, /pj/429
+라즈베리를 활용한 미디어박스의 운영 시스템 개발, /pj/444
+전력설비 감시제어용 음성지원시스템 개발, /pj/404
+AI와 스마트폰을 이용한 출입자 건강관리, /pj/381
+빅데이터 기반 이미지 편집 온라인 솔루션(HTML5), /pj/378
+AI 기반 자동차 차대번호 인식 및 Android App개발, /pj/371
+엘리베이터 실시간 모니터링 및 추천 시스템 개발, /pj/406
+OpenCV와 YOLO를 이용하는 OnBoard AI 기반  People Count 서비스, /pj/388
+AI 기반 Part of car segmentation 개발, /pj/374
+스마트팜 스타트업 비즈니스 모델링, /pj/487
+스마트팜 농가 데이터 전처리(정제 및 labeling) 및 자동화 프로그래밍, /pj/486
+웹 / SNS 사이트 크롤링을 통한 데이터 수집 및 이슈 트래킹, /pj/424
+빅데이터 자동 탐색(Automated Data Discovery)과 머신러닝을 통한 사용자 비개입 데이터 시각화 기술, /pj/421
+[클라우드] 인프라 가시화 프로젝트, /pj/419
+심리 상담 AI 챗봇, /pj/481
+의료용 PACS 데이터 Auto labeling 프로젝트, /pj/436
+머신러닝 주식 포트폴리오 최적화, /pj/417
+딥러닝(YOLO) 기반 세탁물을 분류/예측하고 분류된 세탁물에 적합한 세탁 정보를 제공하는 인공지능 세탁기,  AI Washer, /pj/452
+webgl 을 활용한 e-commerce 상품 정보 3d/AR player/viewer 구축, /pj/432
+Deep Learning 기반 납땜 Void 자동 검출 솔루션, /pj/450
+AR 증강현실을 활용한 가구 인테리어 시스템 개발, /pj/413
+딥러닝(YOLO) 기반 세탁물을 분류/예측하고 분류된 세탁물에 적합한 세탁 정보를 제공하는 인공지능 세탁기,  AI Washer, /pj/474
+메타버스기반 IPTV서비스씬 개발, /pj/445
+클라우드 앱콘텐츠 서비스 개발, /pj/411
+Segmentation 기술을 활용한 전경(객체) 검출, /pj/428
+교내 학사시스템 취약점 점검을 위한 도구 개발, /pj/441
+클라우드 서버 기반 GNSS 상시계측 시스템 WEB 개발, /pj/423
+수집 데이터 특성에 따른 클라우드 네이티브 기반 데이터 플랫폼 자가 구성(Self-configurable) 기술, /pj/460
+블록체인과 AI,빅데이터를 활용한  안심인증 중고거래 플랫폼 서비스, /pj/418
+심리 상담 AI 챗봇, /pj/416
+제조상에서의 유해화학물질 저감을 위한 안전 모니터링 솔루션 개발, /pj/451
+빅데이터 기반 이미지 편집 온라인 솔루션(HTML5), /pj/414
+개인 PC 보안 진단 프로그램 개발, /pj/431
+심리 상담 AI 챗봇, /pj/475
+AI기반 카카오톡의 다양한 이벤트를 블루투스 제품을 통해 TTS 음성으로 안내하는 IOT 앱개발, /pj/412
+AR 기반의 도서관 내비게이션 프로그램 개발, /pj/426
+약물 지식 데이터베이스 구축 및 의약품 식별 알고리즘 개발, /pj/462
+MLOps 기반 골프 자세 분석 파이프라인 최적화, /pj/483
+머신 러닝을 통한 음성 데이터 개체명 식별, /pj/454
+ffmpeg과 YOLO를 이용한 동영상내 객체 탐지 자동화 솔루션 개발, /pj/479
+멀티클라우드 전환 솔루션 / 서비스, /pj/434
+모두의 복지 챗봇, /pj/415
+대량의 파일 검색 및 백업/복구를 지원하는 파일 관리 프로그램 개발, /pj/448
+독거노인 맞춤형 스마트 케어 서비스 개발, /pj/465
+UiPath RPA 기술 이용한 기업형 업무도구 개발, /pj/443
+IoT sensor data 수집을 통한 edge computing 기술 구현, /pj/425
+머신러닝 기반 NLU기법과 크롤러를 활용한 챗봇, /pj/484
+[K8s] 쿠버네티스 인프라 가시화, /pj/420
+빅데이터 자동 탐색(Automated Data Discovery)과 머신러닝을 통한 사용자 비개입 데이터 시각화 기술 (장기), /pj/458
+비대면 환경에서의 효과적인 교육 및 비지니스를 위한 개인 맞춤형 융합 콘텐츠 생성 기반 기술, /pj/482
+AI 컨택센터 솔루션, /pj/437
+NLP 감정분석을 통한 마케팅 시장분석, /pj/480
+비대면 환경에서의 효과적인 교육 및 비지니스를 위한 개인 맞춤형 융합 콘텐츠 생성 기반 기술, /pj/435
+홀로렌즈를 활용한 MR기반 솔루션 개발, /pj/453
+오픈소스 기반 “ELK” Tool을 연계 전력 Saving 시각화 모니터링 서비스 개발, /pj/478
+딥러닝-CNN 을 활용한 상품 검색 및 상품 정보 Tagging 시스템 구축, /pj/433
+NLP 감정분석을 통한 마케팅 시장분석, /pj/446
+빅데이터 기반 댓글 분석 및 시각화 서비스, /pj/466
+ffmpeg과 YOLO를 이용한 동영상내 객체 탐지 자동화 솔루션 개발, /pj/410
+레이더센서와 열감지센서를 활용한 IoT플랫폼 연계 열감지 서비스 구축, /pj/464

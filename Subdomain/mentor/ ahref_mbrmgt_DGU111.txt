@@ -1,0 +1,14 @@
+text, url 순
+
+공지사항, /msgbrd/DGU701
+양식함, /msgbrd/ReportSampleBoard
+계획서 작성, /pjmake/DGU301
+계획서 관리, /pjmake/DGU311
+팀 선정, /teammgt/DGU221
+팀 확인, /teammgt/DGU222
+보고서 제출, /pjmng/DGU522
+만족도조사서, /eval/DGU601
+실적 조회, /statistics/statistic
+마이페이지 Class : fa fa-user, /mbrmgt/DGU111
+로그아웃 Class : fa fa-fw fa-sign-out, /mbrmgt/DGU141
+수정하기, /mbrmgt/DGU111/edit

@@ -1,0 +1,4 @@
+text, type, placeholder 순
+
+, text, Keyword 또는 Project name
+, submit, None

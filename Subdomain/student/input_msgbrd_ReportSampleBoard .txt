@@ -1,0 +1,2 @@
+text, type, placeholder 순
+

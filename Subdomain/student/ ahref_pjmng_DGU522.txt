@@ -1,0 +1,15 @@
+text, url 순
+
+공지사항, /msgbrd/DGU701
+양식함, /msgbrd/ReportSampleBoard
+팀 생성, /teammgt/DGU201
+나의 팀, /teammgt/DGU211
+프로젝트 지원, /pjapply/DGU401
+프로젝트 목록, /pjapply/DGU411
+보고서 제출, /pjmng/DGU522
+만족도조사서, /eval/DGU601
+실적 조회, /statistics/statistic
+마이페이지 Class : fa fa-user, /mbrmgt/DGU111
+로그아웃 Class : fa fa-fw fa-sign-out, /mbrmgt/DGU141
+교내 학사시스템 취약점 점검을 위한 도구 개발, /pjmng/DGU521/page/441
+ Class : fa fa-angle-up, #page-top

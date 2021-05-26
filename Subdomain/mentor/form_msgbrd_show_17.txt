@@ -1,0 +1,3 @@
+method, action 순
+
+None, get
