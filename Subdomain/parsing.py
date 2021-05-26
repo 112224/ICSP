@@ -32,6 +32,7 @@ def search_tag(path):
                     url = "None"
                 if url in ('#', '/'):
                     continue  # http://ssms.dongguk.edu/# == http://ssms.dongguk.edu/ 이어서 그냥 거름
+                # 이미지 url 도 그냥 박아버리는 거 같은데, 의도한건지 확인 바람.
                 for li in attr:
                     if link.find(li) is None:
                         continue

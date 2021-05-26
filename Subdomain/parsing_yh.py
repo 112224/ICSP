@@ -22,14 +22,18 @@ def search_tag(path):
         attr = ['img', 'i']
         for link in soup.find_all('a'):
             url = link.get('href')
+            attr_flag = False
             if not url:
                 continue
+            # 여기 부분 확인하고 알려줘
             if url in ('#', '/'):
                 continue  # http://ssms.dongguk.edu/# == http://ssms.dongguk.edu/ 이어서 그냥 거름
             for li in attr:
-                if not link.find(li):
-                    continue
-            if url.startswith('javascript') or url.startswith('mailto'):
+                if link.find(li):
+                    attr_flag = True
+                    break
+
+            if attr_flag or url.startswith('javascript') or url.startswith('mailto'):
                 continue
             if url.startswith('http') and not url.startswith(ROOT):  # http로 시작하는데 https://facebook.com 날리는 거고
                 continue
@@ -43,24 +47,38 @@ def search_tag(path):
         for link in soup.find_all('form'):
             method = link.get('method')
             action = link.get('action')
+            req_params = []
             if not method:
+                # submit 은 있고, form 에 method 가 없다면
+                # 이 form 을 이용하여 통신을 하는 함수가 적어도 하나 존재(통신을 가정)
+                # script 중 해당 form 의 id를 이용하는 부분의 +- N글자 만큼을 읽어옴
+                # 해당 부분에서 method 와 url 탐색
+                tmp = soup.find_all('script')
+                tmp = str(tmp)
+                js_idx = tmp.find(link.get('id'))
+                tmp = tmp[js_idx - 150: js_idx + 150]
+                # ...
+
                 flag = False
                 for wp in li.find_all('input'):
                     # form 의 자식들
                     c_id, c_type, c_name = wp.get('id'), wp.get('type'), wp.get('name')
+                    # method 는 못찾았지만, submit 이 있을 때
                     if c_type == 'submit':
                         flag = True
-                print()
+                        continue
+                    req_params.append((c_id, c_type, c_name))
+                if not flag:
+                    continue
                 for wp in li.find_all('select'):
-                    print(wp.get('id'), wp.get('type'), wp.get('name'))
+                    c_id, c_type, c_name = wp.get('id'), wp.get('type'), wp.get('name')
+                    c_opts = []
                     for opt in wp.find_all('option'):
-                        print(opt.get('value'))
+                        c_opts.append(opt.get('value'))
             else:
 
             if action:
 
-            tmplist = (method, action)
-            formlist.append(tmplist)
 
         # text,type,placeholder 순
         for link in soup.find_all('input'):

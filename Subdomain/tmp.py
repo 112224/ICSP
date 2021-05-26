@@ -18,15 +18,18 @@ print('7. ', soup.find_all('input'), '\n\n')
 val = soup.find_all('form')
 print('8. ', val)
 
-ans = []
 print('!!!!!!!test\n\n\n')
 if val:
     for li in val:
+        print('form id:', li.get('id'))
         res = li.get('method')
-        ans.append(res)
         if not res:
+            tmp = soup.find_all('script')
+            tmp = str(tmp)
             # input이랑 select는 처리 radio는 어떻게 하지..?
             # radio
+            js_idx = tmp.find(li.get('id'))
+            print(tmp[js_idx - 150: js_idx + 150])
             print(li.find_all('input'))
             print(li.find_all('select'))
             for wp in li.find_all('input'):
@@ -36,6 +39,7 @@ if val:
                 print(wp.get('id'), wp.get('type'), wp.get('name'))
                 for opt in wp.find_all('option'):
                     print(opt.get('value'))
+
 
 
 #print(ans)
