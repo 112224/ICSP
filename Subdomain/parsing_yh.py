@@ -9,13 +9,15 @@ import pandas as pd
 
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
-def search_tag(soup):
+def search_tag(visited, soup):
     # 페이지 안에 herf 로 다른 페이지 이동이 있을 경우
-    attr = ['img', 'i']
+    attr = ['img']
     for link in soup.find_all('a'):
         url = link.get('href')
         attr_flag = False
         if not url:
+            continue
+        if url in visited:
             continue
         # 여기 부분 확인하고 알려줘
         if url in ('#', '/'):
@@ -32,11 +34,13 @@ def search_tag(soup):
         elif url.startswith(ROOT):  # http로 시작하는데, https://stackoverflow.com/telnet
             url = url.replace(ROOT, '')  # /telnet 변환
         # print("url :", url)
-        queue.append(url)
+        if url not in visited:
+            visited.add(url)
+            queue.append(url)
 
 
 def search_ele(path, soup):
-    # method, action순
+    # method, action 순
     # form 을 찾아서 method 확인 => 입력받는 곳이 없으면 sql or xss 의 대상 아님
     for link in soup.find_all('form'):
         method = link.get('method')
@@ -85,7 +89,8 @@ def search_ele(path, soup):
             else:
                 continue
         # method 가 form 안에 있는 경우는 별도 지정 없이 바로 추가
-        print([path, method, action,req_params, sel_params])
+        # print([path, method, action,req_params, sel_params])
+        ret.append([path, method, action,req_params, sel_params])
 
         '''# text,type,placeholder 순
         for link in soup.find_all('input'):
@@ -119,30 +124,46 @@ if __name__ == "__main__":
         'loginId': 'juno',
         'loginPwd': 'theori1234'
     }
+    loginfo.append({})
     loginfo.append(stdvalues)
     loginfo.append(mtrvalues)
 
 for login in loginfo:
-
     ROOT = "http://ssms.dongguk.edu"
     visited = set()
     queue = deque([""])
-    login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
-    session = requests.session()
-    res = session.post(login_url, data=login)
-    res.raise_for_status()
-    folder = login.get('loginType') + '/'
+    res = None
+    if login:
+        login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
+        session = requests.session()
+        res = session.post(login_url, data=login)
+        res.raise_for_status()
+        cookie_val = res.cookies
+        print(cookie_val)
+    # folder = login.get('loginType') + '/'
+    # df = pd.DataFrame(columns=['url', 'method', 'action', 'req_params', 'sel_params'])
+    ret = []
+    once = False
     while queue:
         u = queue.popleft()
-        if u not in visited:
-            visited.add(u)
-            try:
-                absolute_path = ROOT + u
+        '''if u not in visited or not once:
+            visited.add(u)'''
+        try:
+            absolute_path = ROOT + u
+            if res:
                 res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
                 soup = BeautifulSoup(res.content, "html.parser")
-                search_tag(soup)
-                search_ele(u, soup)
-            except:
-                print(traceback.format_exc().splitlines()[-1])
 
-
+            else:
+                soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
+            search_tag(visited, soup)
+            # val = soup.find_all('form')
+            # print(val)
+            search_ele(absolute_path, soup)
+        except:
+            print(traceback.format_exc().splitlines()[-1])
+        once = True
+    print('complete the task!!')
+    for ele in ret:
+        print(ele)
+    # df.to_csv(f'{ROOT}.csv', index=False)
