@@ -7,6 +7,12 @@ import os
 import pandas as pd
 
 
+def refine_str(dirty):
+    clean = dirty.replace('"', '')
+    clean = clean.replace("'", '')
+    clean = clean.replace(',', '')
+    return clean
+
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
 def search_tag(visited, soup):
@@ -84,12 +90,21 @@ def search_ele(path, soup):
                 for i in range(len(tmp)):
                     if tmp[i] == 'url:':
                         action = tmp[i + 1]
-                    if tmp[i] == 'type:':
+                    elif tmp[i] == 'url':
+                        action = tmp[i + 2]
+                    elif tmp[i] == 'type:':
                         method = tmp[i + 1]
+                    elif tmp[i] == 'type':
+                        method = tmp[i + 2]
             else:
                 continue
+        elif not method and not flag:
+            continue
         # method 가 form 안에 있는 경우는 별도 지정 없이 바로 추가
         # print([path, method, action,req_params, sel_params])
+        method = refine_str(method)
+        if action:
+            action = refine_str(action)
         ret.append([path, method, action,req_params, sel_params])
 
         '''# text,type,placeholder 순
