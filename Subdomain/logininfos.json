@@ -1,0 +1,33 @@
+{
+
+  "stdvalues": {
+
+    "loginType": "student",
+    "loginId": "2018113581",
+    "loginPwd": "caps1234"
+  },
+
+
+  "mtrvalues": {
+
+    "loginType": "mentor",
+    "loginId": "juno",
+    "loginPwd": "theori1234"
+  },
+
+
+  "insvalues": {
+
+    "loginType": "instructor",
+    "loginId": "kh.cho",
+    "loginPwd": "d7Sx33PIPL"
+
+  }
+
+
+
+
+
+
+}
+

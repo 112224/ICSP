@@ -5,7 +5,7 @@ import traceback
 import requests
 import os
 import pandas as pd
-
+import json
 
 def refine_str(dirty):
     clean = dirty.replace('"', '')
@@ -129,19 +129,14 @@ if __name__ == "__main__":
     loginfo = []
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-    stdvalues = {
-        'loginType': 'student',  # student, mentor,instructor,assistant
-        'loginId': '2018113581',  # 학생, 멘토, 교수, 조교 4가지 logintype
-        'loginPwd': 'caps1234'
-    }
-    mtrvalues = {
-        'loginType': 'mentor',
-        'loginId': 'juno',
-        'loginPwd': 'theori1234'
-    }
+
     loginfo.append({})
-    loginfo.append(stdvalues)
-    loginfo.append(mtrvalues)
+###########################################
+    with open('logininfos.json','r') as f:
+        data=json.load(f)
+    for user in data:
+        loginfo.append(data[user])
+########################################### json 파일에서 로그인 정보 불러옴
 
 for login in loginfo:
     ROOT = "http://ssms.dongguk.edu"
