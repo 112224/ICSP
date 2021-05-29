@@ -8,7 +8,7 @@ from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtUiTools import QUiLoader
 from qt_material import apply_stylesheet, QtStyleTools
 
-import Subdomain.parsing as Parsing
+import Subdomain.parsing as parsing
 
 
 # Extra stylesheets
@@ -36,7 +36,7 @@ class RuntimeStylesheets(QMainWindow, QtStyleTools):
         self.main.plainTextEdit.setReadOnly(True)
 
     def print_button(self):
-        Parsing.main()
+        parsing.main()
         self.main.plainTextEdit.appendPlainText("Parsing End.")
 
 
