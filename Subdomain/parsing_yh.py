@@ -7,11 +7,13 @@ import os
 import pandas as pd
 import json
 
+
 def refine_str(dirty):
     clean = dirty.replace('"', '')
     clean = clean.replace("'", '')
     clean = clean.replace(',', '')
     return clean
+
 
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
@@ -126,7 +128,7 @@ if __name__ == "__main__":
         if not os.path.exists(directory):
             os.makedirs(directory)'''
 
-    loginfo = []
+    loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
     with open('logininfos.json','r') as f:
