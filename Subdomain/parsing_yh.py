@@ -172,10 +172,24 @@ if __name__ == "__main__":
                 print(traceback.format_exc().splitlines()[-1])
             once = True
         print('complete the task!!')
-        for path, method, action,req_params, sel_params in ret:
-            if action:
-                action = ROOT + action
-            # req_params 는 이름만 있다고 가정
-            print(path, method, action, req_params, sel_params)
-            path + "--data="+'=1&'.join(req_params)
+        type_filter = []
+        with open(f"sql.txt", "w+", encoding='UTF-8') as f:
+            for path, method, action,req_params, sel_params in ret:
+                if action:
+                    action = ROOT + action
+                else:
+                    continue
+                # 파라미터가 없는 경우 => injection 불가라고 생각하여 넣음
+                if len(req_params):
+                    for_data = []
+                    for_para = []
+                    for cid, ctype, cname in req_params:
+                        if ctype not in type_filter:
+                            # 얘는 정리 쉬움 ','.join(map(str,for_para))
+                            for_para.append(cname)
+                        # 얘는 default 값이 필요 형태는 '={default}&'.join(map(str,for_data)
+                        for_data.append(cname)
+
+                print(path, method, action, req_params, sel_params)
+
         # df.to_csv(f'{ROOT}.csv', index=False)
