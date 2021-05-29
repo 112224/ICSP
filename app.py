@@ -32,10 +32,10 @@ class RuntimeStylesheets(QMainWindow, QtStyleTools):
         super().__init__()
 
         self.main = QUiLoader().load('main_window.ui', self)
-        self.main.pushButton.clicked.connect(self.print_button)
+        self.main.pushButton.clicked.connect(self.start_button)
         self.main.plainTextEdit.setReadOnly(True)
 
-    def print_button(self):
+    def start_button(self):
         parsing.main()
         self.main.plainTextEdit.appendPlainText("Parsing End.")
 
