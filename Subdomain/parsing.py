@@ -6,7 +6,11 @@ import requests
 import os
 import pandas as pd
 
-def search_tag(path):
+
+ROOT = "http://ssms.dongguk.edu"
+
+
+def search_tag(path, folder, visited, queue):
     visited.add(path)
     try:
         path_name = path.replace('/', '_')
@@ -15,8 +19,9 @@ def search_tag(path):
             f.write("text, url 순\n\n")
             absolute_path = ROOT + path
             print("absolute_path :", absolute_path)
-            
+
             ###########################################
+            session = requests.session()
             res = session.get(absolute_path, timeout=4)        #기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
             soup = BeautifulSoup(res.content, "html.parser")
             ###############################################
@@ -107,8 +112,7 @@ def search_tag(path):
         print(traceback.format_exc().splitlines()[-1])
 
 
-if __name__ == "__main__":
-
+def main():
     curdir=os.getcwd()
     logintypes=['/student', '/mentor']#, 'instructor' ,'assistant']
     for folder in logintypes:
@@ -123,24 +127,26 @@ if __name__ == "__main__":
         'loginPwd': 'caps1234'
     }
     mtrvalues={
-        'loginType': 'mentor',        
-        'loginId': 'juno',      
+        'loginType': 'mentor',
+        'loginId': 'juno',
         'loginPwd': 'theori1234'
     }
     loginfo.append(stdvalues)
     loginfo.append(mtrvalues)
 
-for login in loginfo:
+    for login in loginfo:
+        visited = set()
+        queue = deque([""])
+        login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
+        session = requests.session()
+        res = session.post(login_url, data=login)
+        res.raise_for_status()
+        folder = login.get('loginType') + '/'
+        while queue:
+            u = queue.popleft()
+            if u not in visited:
+                search_tag(u, folder, visited, queue)
 
-    ROOT = "http://ssms.dongguk.edu"
-    visited = set()
-    queue = deque([""])
-    login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
-    session = requests.session()
-    res = session.post(login_url, data=login)
-    res.raise_for_status() 
-    folder = login.get('loginType') + '/'
-    while queue:
-        u = queue.popleft()
-        if u not in visited:
-            search_tag(u)
+
+if __name__ == "__main__":
+    main()
