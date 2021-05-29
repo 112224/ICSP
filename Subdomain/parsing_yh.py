@@ -5,6 +5,7 @@ import traceback
 import requests
 import os
 import pandas as pd
+import json
 
 
 def refine_str(dirty):
@@ -129,25 +130,19 @@ if __name__ == "__main__":
     loginfo = []
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-    stdvalues = {
-        'loginType': 'student',  # student, mentor,instructor,assistant
-        'loginId': '2018113581',  # 학생, 멘토, 교수, 조교 4가지 logintype
-        'loginPwd': 'caps1234'
-    }
-    mtrvalues = {
-        'loginType': 'mentor',
-        'loginId': 'juno',
-        'loginPwd': 'theori1234'
-    }
+
     loginfo.append({})
-    loginfo.append(stdvalues)
-    loginfo.append(mtrvalues)
+    with open('logininfos.json', 'r') as f:
+        data = json.load(f)
+    for user in data:
+        loginfo.append(data[user])
 
 for login in loginfo:
     ROOT = "http://ssms.dongguk.edu"
     visited = set()
     queue = deque([""])
     res = None
+    cookie_val = None
     if login:
         login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
         session = requests.session()
@@ -168,7 +163,6 @@ for login in loginfo:
             if res:
                 res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
                 soup = BeautifulSoup(res.content, "html.parser")
-
             else:
                 soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
             search_tag(visited, soup)
@@ -181,4 +175,5 @@ for login in loginfo:
     print('complete the task!!')
     for ele in ret:
         print(ele)
+
     # df.to_csv(f'{ROOT}.csv', index=False)

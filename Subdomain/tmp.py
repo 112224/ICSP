@@ -4,6 +4,8 @@ from collections import deque
 import traceback
 import requests
 import os
+import re
+p = re.compile(r'[\w\\]*')
 
 
 soup = BeautifulSoup(urlopen('http://ssms.dongguk.edu/mbrmgt/DGU101'), "html.parser")
@@ -20,7 +22,7 @@ print('5. ', soup.p)
 
 print('!!!!!!!test\n\n\n')
 
-val = soup.find_all('form')
+'''val = soup.find_all('form')
 for li in val:
     print('form id:', li.get('id'))
     res = li.get('method')
@@ -51,8 +53,10 @@ for li in val:
         for wp in li.find_all('select'):
             print(wp.get('id'), wp.get('type'), wp.get('name'))
             for opt in wp.find_all('option'):
-                print(opt.get('value'))
+                print(opt.get('value'))'''
 
-
+path = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
+path = p.findall(path)
+print(path)
 
 #print(ans)
