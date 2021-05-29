@@ -5,3 +5,5 @@ matplotlib
 urllib3
 requests
 pandas
+PySide6
+qt_material

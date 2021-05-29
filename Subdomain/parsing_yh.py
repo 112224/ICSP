@@ -7,7 +7,6 @@ import os
 import pandas as pd
 import json
 
-
 def refine_str(dirty):
     clean = dirty.replace('"', '')
     clean = clean.replace("'", '')
@@ -130,50 +129,47 @@ if __name__ == "__main__":
     loginfo = []
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-
-    loginfo.append({})
-    with open('logininfos.json', 'r') as f:
-        data = json.load(f)
+    with open('logininfos.json','r') as f:
+        data=json.load(f)
     for user in data:
         loginfo.append(data[user])
 
-for login in loginfo:
-    ROOT = "http://ssms.dongguk.edu"
-    visited = set()
-    queue = deque([""])
-    res = None
-    cookie_val = None
-    if login:
-        login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
-        session = requests.session()
-        res = session.post(login_url, data=login)
-        res.raise_for_status()
-        cookie_val = res.cookies
-        print(cookie_val)
-    # folder = login.get('loginType') + '/'
-    # df = pd.DataFrame(columns=['url', 'method', 'action', 'req_params', 'sel_params'])
-    ret = []
-    once = False
-    while queue:
-        u = queue.popleft()
-        '''if u not in visited or not once:
-            visited.add(u)'''
-        try:
-            absolute_path = ROOT + u
-            if res:
-                res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
-                soup = BeautifulSoup(res.content, "html.parser")
-            else:
-                soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
-            search_tag(visited, soup)
-            # val = soup.find_all('form')
-            # print(val)
-            search_ele(absolute_path, soup)
-        except:
-            print(traceback.format_exc().splitlines()[-1])
-        once = True
-    print('complete the task!!')
-    for ele in ret:
-        print(ele)
+    for login in loginfo:
+        ROOT = "http://ssms.dongguk.edu"
+        visited = set()
+        queue = deque([""])
+        res = None
+        if login:
+            login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
+            session = requests.session()
+            res = session.post(login_url, data=login)
+            res.raise_for_status()
+            cookie_val = res.cookies
+            print(cookie_val)
+        # folder = login.get('loginType') + '/'
+        # df = pd.DataFrame(columns=['url', 'method', 'action', 'req_params', 'sel_params'])
+        ret = []
+        once = False
+        while queue:
+            u = queue.popleft()
+            '''if u not in visited or not once:
+                visited.add(u)'''
+            try:
+                absolute_path = ROOT + u
+                if res:
+                    res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
+                    soup = BeautifulSoup(res.content, "html.parser")
 
-    # df.to_csv(f'{ROOT}.csv', index=False)
+                else:
+                    soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
+                search_tag(visited, soup)
+                # val = soup.find_all('form')
+                # print(val)
+                search_ele(absolute_path, soup)
+            except:
+                print(traceback.format_exc().splitlines()[-1])
+            once = True
+        print('complete the task!!')
+        for ele in ret:
+            print(ele)
+        # df.to_csv(f'{ROOT}.csv', index=False)
