@@ -15,7 +15,6 @@ extra = {
     'danger': '#dc3545',
     'warning': '#ffc107',
     'success': '#17a2b8',
-
     # Font
     'font_family': 'Malgun Gothic',
 }
