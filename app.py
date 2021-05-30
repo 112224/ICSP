@@ -1,14 +1,11 @@
-import os
 from multiprocessing import freeze_support
-import time
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QStatusBar
 from PySide6.QtCore import QTimer, Qt, QCoreApplication
-from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtUiTools import QUiLoader
 from qt_material import apply_stylesheet, QtStyleTools
 
-import Subdomain.parsing as parsing
+import Subdomain.parsing_yh as parsing
 
 
 # Extra stylesheets
@@ -36,7 +33,7 @@ class RuntimeStylesheets(QMainWindow, QtStyleTools):
         self.main.plainTextEdit.setReadOnly(True)
 
     def start_button(self):
-        parsing.main()
+        parsing.main(self.main.lineEdit.text())
         self.main.plainTextEdit.appendPlainText("Parsing End.")
 
 

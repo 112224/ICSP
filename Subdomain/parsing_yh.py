@@ -4,7 +4,6 @@ from collections import deque
 import traceback
 import requests
 import os
-import pandas as pd
 import json
 
 
@@ -17,7 +16,7 @@ def refine_str(dirty):
 
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
-def search_tag(visited, soup):
+def search_tag(visited, soup, root, queue):
     # 페이지 안에 herf 로 다른 페이지 이동이 있을 경우
     attr = ['img']
     for link in soup.find_all('a'):
@@ -37,17 +36,17 @@ def search_tag(visited, soup):
 
         if attr_flag or url.startswith('javascript') or url.startswith('mailto'):
             continue
-        if url.startswith('http') and not url.startswith(ROOT):  # http로 시작하는데 https://facebook.com 날리는 거고
+        if url.startswith('http') and not url.startswith(root):  # http로 시작하는데 https://facebook.com 날리는 거고
             continue
-        elif url.startswith(ROOT):  # http로 시작하는데, https://stackoverflow.com/telnet
-            url = url.replace(ROOT, '')  # /telnet 변환
+        elif url.startswith(root):  # http로 시작하는데, https://stackoverflow.com/telnet
+            url = url.replace(root, '')  # /telnet 변환
         # print("url :", url)
         if url not in visited:
             visited.add(url)
             queue.append(url)
 
 
-def search_ele(path, soup):
+def search_ele(path, soup, ret):
     # method, action 순
     # form 을 찾아서 method 확인 => 입력받는 곳이 없으면 sql or xss 의 대상 아님
     for link in soup.find_all('form'):
@@ -119,8 +118,8 @@ def search_ele(path, soup):
             tmplist = (text, type, placeholder)
             inputlist.append(tmplist)'''
 
-if __name__ == "__main__":
 
+def main(input_url):
     '''curdir = os.getcwd()
     logintypes = ['/student', '/mentor']  # , 'instructor' ,'assistant']
     for folder in logintypes:
@@ -131,13 +130,17 @@ if __name__ == "__main__":
     loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-    with open('logininfos.json','r') as f:
-        data=json.load(f)
+    import os.path
+
+    scriptpath = os.path.dirname(__file__)
+    filepath = os.path.join(scriptpath, 'logininfos.json')
+    with open(filepath, 'r') as f:
+        data = json.load(f)
     for user in data:
         loginfo.append(data[user])
 
     for login in loginfo:
-        ROOT = "http://ssms.dongguk.edu"
+        root = input_url
         visited = set()
         queue = deque([""])
         res = None
@@ -157,17 +160,17 @@ if __name__ == "__main__":
             '''if u not in visited or not once:
                 visited.add(u)'''
             try:
-                absolute_path = ROOT + u
+                absolute_path = root + u
                 if res:
                     res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
                     soup = BeautifulSoup(res.content, "html.parser")
 
                 else:
                     soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
-                search_tag(visited, soup)
+                search_tag(visited, soup, root, queue)
                 # val = soup.find_all('form')
                 # print(val)
-                search_ele(absolute_path, soup)
+                search_ele(absolute_path, soup, ret)
             except:
                 print(traceback.format_exc().splitlines()[-1])
             once = True
@@ -176,7 +179,7 @@ if __name__ == "__main__":
         with open(f"sql.txt", "w+", encoding='UTF-8') as f:
             for path, method, action,req_params, sel_params in ret:
                 if action:
-                    action = ROOT + action
+                    action = root + action
                 else:
                     continue
                 # 파라미터가 없는 경우 => injection 불가라고 생각하여 넣음
@@ -192,4 +195,8 @@ if __name__ == "__main__":
 
                 print(path, method, action, req_params, sel_params)
 
-        # df.to_csv(f'{ROOT}.csv', index=False)
+        # df.to_csv(f'{root}.csv', index=False)
+
+
+if __name__ == "__main__":
+    main("http://ssms.dongguk.edu")
