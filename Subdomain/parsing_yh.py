@@ -126,7 +126,7 @@ def main(input_url):
         directory = curdir + folder
         if not os.path.exists(directory):
             os.makedirs(directory)'''
-
+    ans = []
     loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
@@ -173,9 +173,12 @@ def main(input_url):
                 print(traceback.format_exc().splitlines()[-1])
             once = True
         print('complete the task!!')
+        ans.append(ret)
         type_filter = ['radio', 'checkbox']
-        with open(f"sql.txt", "w+", encoding='UTF-8') as f:
-            for path, method, action,req_params, sel_params in ret:
+    with open(f"sql_{input_url[7:]}.txt", "w+", encoding='UTF-8') as f:
+        url_check = set()
+        for ret in ans:
+            for path, method, action, req_params, sel_params in ret:
                 for_data = []
                 for_para = []
                 add_str = ''
@@ -185,30 +188,35 @@ def main(input_url):
                 else:
                     continue
                 # 파라미터가 없는 경우 => injection 불가라고 생각하여 넣음
-                if len(req_params) and method == 'post' or method == 'POST':
-                    for cid, ctype, cname in req_params:
-                        if not cname:
-                            continue
-                        if cname in checked:
-                            continue
-                        checked.add(cname)
-                        if ctype not in type_filter:
-                            # 얘는 정리 쉬움 ','.join(map(str,for_para))
-                            for_para.append(cname)
-                        if ctype == 'checkbox':
-                            for_data.append(f'{cname}=True')
-                            continue
-                        # 얘는 default 값이 필요 형태는 '&'.join(map(str,for_data)
-                        else:
-                            for_data.append(f'{cname}=1')
-                    for cid, ctype, cname, copts in sel_params:
-                        for_data.append(f'{cname}={copts[0]}')
+                if len(req_params):
+                    if method == 'post' or method == 'POST':
+                        for cid, ctype, cname in req_params:
+                            if not cname:
+                                continue
+                            if cname in checked:
+                                continue
+                            checked.add(cname)
+                            if ctype not in type_filter:
+                                # 얘는 정리 쉬움 ','.join(map(str,for_para))
+                                for_para.append(cname)
+                            if ctype == 'checkbox':
+                                for_data.append(f'{cname}=True')
+                                continue
+                            # 얘는 default 값이 필요 형태는 '&'.join(map(str,for_data)
+                            else:
+                                for_data.append(f'{cname}=1')
+                        for cid, ctype, cname, copts in sel_params:
+                            for_data.append(f'{cname}={copts[0]}')
+                else:
+                    continue
                 if method == 'post' or method == 'POST':
-                    add_str = ' --data="'+'&'.join(map(str, for_data))+'" -p '+','.join(map(str,for_para))
-                print(action + add_str)
-
-
-                print(path, method, action, req_params, sel_params, '\n')
+                    add_str = ' --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
+                if method == 'get' or method == 'GET':
+                    if action in url_check:
+                        continue
+                    url_check.add(action)
+                f.write(action + add_str + '\n')
+                # print(path, method, action, req_params, sel_params, '\n')
 
         # df.to_csv(f'{root}.csv', index=False)
 

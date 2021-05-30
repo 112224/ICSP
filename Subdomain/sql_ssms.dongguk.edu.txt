@@ -1,0 +1,13 @@
+http://ssms.dongguk.edu/mbrmgt/DGU101 --data="registerType=1&registerId=1&registerName=1&registerPwd=1&registerEmail=1&registerTel=1&registerPrivateCheck=True&registerGrade=1&registerDepartment=컴퓨터공학전공" -p registerId,registerName,registerPwd,registerEmail,registerTel
+http://ssms.dongguk.edu/mbrmgt/DGU121 --data="loginType=1&loginId=1&loginPwd=1" -p loginId,loginPwd
+http://ssms.dongguk.edu/msgbrd/DGU701
+http://ssms.dongguk.edu/teammgt/DGU201/team/create --data="teamName=1&teamCreateType=36" -p teamName
+http://ssms.dongguk.edu/teammgt/DGU211 --data="teamPersonalCompetenceFile=1&pfType=36" -p teamPersonalCompetenceFile
+http://ssms.dongguk.edu/pjapply/DGU401 --data="SearchContent=1&selectDevelopment=0" -p SearchContent
+http://ssms.dongguk.edu/mbrmgt/DGU101 --data="registerType=1&registerId=1&registerName=1&registerPwd=1&registerEmail=1&registerTel=1&registerPrivateCheck=True&registerGrade=1&registerDepartment=컴퓨터공학전공" -p registerId,registerName,registerPwd,registerEmail,registerTel
+http://ssms.dongguk.edu/mbrmgt/DGU121 --data="loginType=1&loginId=1&loginPwd=1" -p loginId,loginPwd
+http://ssms.dongguk.edu/pjmake/DGU301 --data="PjName=1&prj_outline=1&inputKeyword1=1&inputKeyword2=1&inputKeyword3=1&inputProf=1&developmentSelect1=1&inputProjectFile=1&inputProjectVideo=1&inputProjectVideo2=1&inputMentor=1&developmentSelect=없음&Term=0&internship_yn=2" -p PjName,prj_outline,inputKeyword1,inputKeyword2,inputKeyword3,inputProf,developmentSelect1,inputProjectFile,inputProjectVideo,inputProjectVideo2,inputMentor
+http://ssms.dongguk.edu/mbrmgt/DGU101 --data="registerType=1&registerId=1&registerName=1&registerPwd=1&registerEmail=1&registerTel=1&registerPrivateCheck=True&registerGrade=1&registerDepartment=컴퓨터공학전공" -p registerId,registerName,registerPwd,registerEmail,registerTel
+http://ssms.dongguk.edu/mbrmgt/DGU121 --data="loginType=1&loginId=1&loginPwd=1" -p loginId,loginPwd
+http://ssms.dongguk.edu/mbrmgt/DGU101 --data="registerType=1&registerId=1&registerName=1&registerPwd=1&registerEmail=1&registerTel=1&registerPrivateCheck=True&registerGrade=1&registerDepartment=컴퓨터공학전공" -p registerId,registerName,registerPwd,registerEmail,registerTel
+http://ssms.dongguk.edu/mbrmgt/DGU121 --data="loginType=1&loginId=1&loginPwd=1" -p loginId,loginPwd
