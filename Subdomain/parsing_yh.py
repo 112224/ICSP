@@ -5,6 +5,7 @@ import traceback
 import requests
 import os
 import pandas as pd
+import json
 
 
 def refine_str(dirty):
@@ -12,6 +13,7 @@ def refine_str(dirty):
     clean = clean.replace("'", '')
     clean = clean.replace(',', '')
     return clean
+
 
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
@@ -126,59 +128,68 @@ if __name__ == "__main__":
         if not os.path.exists(directory):
             os.makedirs(directory)'''
 
-    loginfo = []
+    loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-    stdvalues = {
-        'loginType': 'student',  # student, mentor,instructor,assistant
-        'loginId': '2018113581',  # 학생, 멘토, 교수, 조교 4가지 logintype
-        'loginPwd': 'caps1234'
-    }
-    mtrvalues = {
-        'loginType': 'mentor',
-        'loginId': 'juno',
-        'loginPwd': 'theori1234'
-    }
-    loginfo.append({})
-    loginfo.append(stdvalues)
-    loginfo.append(mtrvalues)
+    with open('logininfos.json','r') as f:
+        data=json.load(f)
+    for user in data:
+        loginfo.append(data[user])
 
-for login in loginfo:
-    ROOT = "http://ssms.dongguk.edu"
-    visited = set()
-    queue = deque([""])
-    res = None
-    if login:
-        login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
-        session = requests.session()
-        res = session.post(login_url, data=login)
-        res.raise_for_status()
-        cookie_val = res.cookies
-        print(cookie_val)
-    # folder = login.get('loginType') + '/'
-    # df = pd.DataFrame(columns=['url', 'method', 'action', 'req_params', 'sel_params'])
-    ret = []
-    once = False
-    while queue:
-        u = queue.popleft()
-        '''if u not in visited or not once:
-            visited.add(u)'''
-        try:
-            absolute_path = ROOT + u
-            if res:
-                res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
-                soup = BeautifulSoup(res.content, "html.parser")
+    for login in loginfo:
+        ROOT = "http://ssms.dongguk.edu"
+        visited = set()
+        queue = deque([""])
+        res = None
+        if login:
+            login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
+            session = requests.session()
+            res = session.post(login_url, data=login)
+            res.raise_for_status()
+            cookie_val = res.cookies
+            print(cookie_val)
+        # folder = login.get('loginType') + '/'
+        # df = pd.DataFrame(columns=['url', 'method', 'action', 'req_params', 'sel_params'])
+        ret = []
+        once = False
+        while queue:
+            u = queue.popleft()
+            '''if u not in visited or not once:
+                visited.add(u)'''
+            try:
+                absolute_path = ROOT + u
+                if res:
+                    res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
+                    soup = BeautifulSoup(res.content, "html.parser")
 
-            else:
-                soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
-            search_tag(visited, soup)
-            # val = soup.find_all('form')
-            # print(val)
-            search_ele(absolute_path, soup)
-        except:
-            print(traceback.format_exc().splitlines()[-1])
-        once = True
-    print('complete the task!!')
-    for ele in ret:
-        print(ele)
-    # df.to_csv(f'{ROOT}.csv', index=False)
+                else:
+                    soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
+                search_tag(visited, soup)
+                # val = soup.find_all('form')
+                # print(val)
+                search_ele(absolute_path, soup)
+            except:
+                print(traceback.format_exc().splitlines()[-1])
+            once = True
+        print('complete the task!!')
+        type_filter = []
+        with open(f"sql.txt", "w+", encoding='UTF-8') as f:
+            for path, method, action,req_params, sel_params in ret:
+                if action:
+                    action = ROOT + action
+                else:
+                    continue
+                # 파라미터가 없는 경우 => injection 불가라고 생각하여 넣음
+                if len(req_params):
+                    for_data = []
+                    for_para = []
+                    for cid, ctype, cname in req_params:
+                        if ctype not in type_filter:
+                            # 얘는 정리 쉬움 ','.join(map(str,for_para))
+                            for_para.append(cname)
+                        # 얘는 default 값이 필요 형태는 '={default}&'.join(map(str,for_data)
+                        for_data.append(cname)
+
+                print(path, method, action, req_params, sel_params)
+
+        # df.to_csv(f'{ROOT}.csv', index=False)
