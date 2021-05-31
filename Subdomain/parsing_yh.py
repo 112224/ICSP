@@ -171,9 +171,13 @@ def main(input_url):
                 print(traceback.format_exc().splitlines()[-1])
             once = True
         print('complete the task!!')
+        for ele in ret:
+            print(ele)
         ans.append(ret)
-        type_filter = ['radio', 'checkbox']
-    with open(f"sql_{input_url[7:]}.txt", "w+", encoding='UTF-8') as f:
+
+    type_filter = ['radio', 'checkbox']
+    fname = input_url[8:] if input_url[:8] == 'https://' else input_url[7:]
+    with open(f"sql_{fname}.txt", "w+", encoding='UTF-8') as f:
         url_check = set()
         for ret in ans:
             for path, method, action, req_params, sel_params in ret:
@@ -208,12 +212,12 @@ def main(input_url):
                 else:
                     continue
                 if method == 'post' or method == 'POST':
-                    add_str = ' --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
+                    sql_add_str = ' --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
                 if method == 'get' or method == 'GET':
                     if action in url_check:
                         continue
                     url_check.add(action)
-                f.write(action + add_str + '\n')
+                f.write(action + sql_add_str + '\n')
                 # print(path, method, action, req_params, sel_params, '\n')
 
         # df.to_csv(f'{root}.csv', index=False)
