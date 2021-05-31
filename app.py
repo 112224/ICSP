@@ -1,3 +1,4 @@
+import os
 from multiprocessing import freeze_support
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QStatusBar
@@ -34,6 +35,15 @@ class RuntimeStylesheets(QMainWindow, QtStyleTools):
     def start_button(self):
         parsing.main(self.main.lineEdit.text())
         self.main.plainTextEdit.appendPlainText("Parsing End.")
+        self.get_sqlamp(self.main.lineEdit.text())
+
+    def get_sqlmap(self, url):
+        with open('./Subdomain/splmap_list.txt', 'r') as textfile:
+            text = textfile.readline()
+            while text:
+                output = os.popen("python sqlmap/sqlmap.py " + text.strip('\n') + " --timeout=4 --batch")
+                self.main.plainTextEdit.appendPlainText(output)
+                text = textfile.readline()
 
 
 if __name__ == "__main__":

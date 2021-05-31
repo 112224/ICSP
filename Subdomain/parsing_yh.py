@@ -176,8 +176,9 @@ def main(input_url):
         ans.append(ret)
 
     type_filter = ['radio', 'checkbox']
-    fname = input_url[8:] if input_url[:8] == 'https://' else input_url[7:]
-    with open(f"sql_{fname}.txt", "w+", encoding='UTF-8') as f:
+    # fname = input_url[8:] if input_url[:8] == 'https://' else input_url[7:]
+    # with open(f"sql_{fname}.txt", "w+", encoding='UTF-8') as f:
+    with open(f"sqlmap_list.txt", "w+", encoding='UTF-8') as f:
         url_check = set()
         for ret in ans:
             for path, method, action, req_params, sel_params in ret:
