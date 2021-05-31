@@ -130,9 +130,7 @@ def main(input_url):
     loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-    scriptpath = os.path.dirname(__file__)
-    filepath = os.path.join(scriptpath, 'logininfos.json')
-    with open(filepath, 'r') as f:
+    with open('logininfos.json', 'r') as f:
         data = json.load(f)
     for user in data:
         loginfo.append(data[user])
