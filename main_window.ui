@@ -7,11 +7,18 @@
     <x>0</x>
     <y>0</y>
     <width>412</width>
-    <height>464</height>
+    <height>642</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Capston</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
@@ -40,45 +47,126 @@
      <string>http://ssms.dongguk.edu</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>111</width>
-      <height>37</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>value 1</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>value 2</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>value 3</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>value 4</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
+      <y>280</y>
       <width>391</width>
       <height>311</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>391</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Login</string>
+    </property>
+    <widget class="QComboBox" name="LoginComboBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>91</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Disable</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Enable</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="LoginPageTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>291</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Login Page</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Login Page</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lDTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>120</y>
+       <width>291</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="PWTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>160</y>
+       <width>291</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PW</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
