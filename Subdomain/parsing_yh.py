@@ -176,7 +176,7 @@ def main(input_url, is_login, login_url, id, pw):
                 checked = set()
                 if action:
                     if action.startswith(root):
-                        action.replace(root,'')
+                        action = action.replace(root,'')
                     action = root + action
                 else:
                     continue
