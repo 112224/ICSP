@@ -139,18 +139,23 @@ def main(input_url, is_login, login_url, id, pw):
             print(cookie_val)
         ret = []
         once = False
+        cnt=0
+ 
         while queue:
+            cnt+=1
+  
             u = queue.popleft()
             '''if u not in visited or not once:
                 visited.add(u)'''
             try:
                 absolute_path = root + u
                 if res:
-                    res = session.get(absolute_path, timeout=4)  # 기존에서 session.get으로 로그인 상태 유지한채 받는거로 바꿈
+                    res = session.get(absolute_path, timeout=4) 
                     soup = BeautifulSoup(res.content, "html.parser")
 
                 else:
-                    soup = BeautifulSoup(urlopen(absolute_path), 'html.parser')
+                    page_response = requests.get(absolute_path, timeout=1)
+                    soup = BeautifulSoup(page_response.content, 'html.parser')
                 search_tag(visited, soup, root, queue)
                 # val = soup.find_all('form')
                 # print(val)
@@ -158,6 +163,7 @@ def main(input_url, is_login, login_url, id, pw):
             except:
                 print(traceback.format_exc().splitlines()[-1])
             once = True
+
         print('complete the task!!')
         for ele in ret:
             print(ele)
@@ -214,6 +220,7 @@ def main(input_url, is_login, login_url, id, pw):
                 # print(path, method, action, req_params, sel_params, '\n')
 
         # df.to_csv(f'{root}.csv', index=False)
+    print(cnt)
 
 
 if __name__ == "__main__":
