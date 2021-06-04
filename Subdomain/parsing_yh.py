@@ -166,7 +166,7 @@ def main(input_url, is_login, login_url, id, pw):
     type_filter = ['radio', 'checkbox']
     # fname = input_url[8:] if input_url[:8] == 'https://' else input_url[7:]
     # with open(f"sql_{fname}.txt", "w+", encoding='UTF-8') as f:
-    with open(f"sqlmap_list.txt", "w+", encoding='UTF-8') as f:
+    with open(f"sqlmap_list.txt", "w+", encoding='UTF-8') as f, open (f"xss_list.txt", "w+", encoding='UTF-8') as f2:
         url_check = set()
         for ret in ans:
             for path, method, action, req_params, sel_params in ret:
@@ -204,15 +204,17 @@ def main(input_url, is_login, login_url, id, pw):
                     continue
                 if method == 'post' or method == 'POST':
                     sql_add_str = ' --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
+                    xss_add_str = ' --data="' + '&'.join(map(str, for_data))
                 if method == 'get' or method == 'GET':
                     if action in url_check:
                         continue
                     url_check.add(action)
                 f.write(action + sql_add_str + '\n')
+                f2.write(action + xss_add_str + '\n')
                 # print(path, method, action, req_params, sel_params, '\n')
 
         # df.to_csv(f'{root}.csv', index=False)
 
 
 if __name__ == "__main__":
-    main("http://192.168.56.107/dvwa/", False, None, None, None)
+    main("http://192.168.56.101/", False, None, None, None)

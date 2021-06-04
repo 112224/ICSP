@@ -1,4 +1,5 @@
 import copy
+import os
 from urllib.parse import urlparse, unquote
 
 from core.colors import good, green, end
@@ -20,20 +21,30 @@ def bruteforcer(target, paramData, payloadList, encoding, headers, delay, timeou
     if not params:
         logger.error('No parameters to test.')
         quit()
-    for paramName in params.keys():
-        progress = 1
-        paramsCopy = copy.deepcopy(params)
-        for payload in payloadList:
-            logger.run('Bruteforcing %s[%s%s%s]%s: %i/%i\r' %
-                       (green, end, paramName, green, end, progress, len(payloadList)))
-            if encoding:
-                payload = encoding(unquote(payload))
-            paramsCopy[paramName] = payload
-            response = requester(url, paramsCopy, headers,
-                                 GET, delay, timeout).text
-            if encoding:
-                payload = encoding(payload)
-            if payload in response:
-                logger.info('%s %s' % (good, payload))
-            progress += 1
+    savedir=os.path.abspath(__file__)    
+    savedir=savedir.replace("XSStrike\modes\\bruteforcer.py", "")
+    fname=os.path.join(savedir,'output','xsstrike','log.txt')
+    flag=False
+    with open(fname,'a') as f:
+        for paramName in params.keys():
+            progress = 1
+            paramsCopy = copy.deepcopy(params)
+            for payload in payloadList:
+                logger.run('Bruteforcing %s[%s%s%s]%s: %i/%i\r' %
+                        (green, end, paramName, green, end, progress, len(payloadList)))
+                if encoding:
+                    payload = encoding(unquote(payload))
+                paramsCopy[paramName] = payload
+                response = requester(url, paramsCopy, headers,
+                                    GET, delay, timeout).text
+                if encoding:
+                    payload = encoding(payload)
+                if payload in response:
+                    if not flag : 
+                        f.write(target+'\n')
+                        flag=True
+                    f.write(payload+'\n')
+                    logger.info('%s %s' % (good, payload))
+                progress += 1
+        if flag : f.write('\n')   
     logger.no_format('')
