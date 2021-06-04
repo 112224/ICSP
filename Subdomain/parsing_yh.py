@@ -119,21 +119,11 @@ def search_ele(path, soup, ret):
             inputlist.append(tmplist)'''
 
 
-def main(input_url):
-    '''curdir = os.getcwd()
-    logintypes = ['/student', '/mentor']  # , 'instructor' ,'assistant']
-    for folder in logintypes:
-        directory = curdir + folder
-        if not os.path.exists(directory):
-            os.makedirs(directory)'''
+def main(input_url, is_login, login_url, id, pw):
     ans = []
     loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
-    with open('logininfos.json', 'r') as f:
-        data = json.load(f)
-    for user in data:
-        loginfo.append(data[user])
 
     for login in loginfo:
         root = input_url
@@ -141,14 +131,12 @@ def main(input_url):
         queue = deque([""])
         res = None
         if login:
-            login_url = 'http://ssms.dongguk.edu/mbrmgt/DGU121'
+            login_url = login_url
             session = requests.session()
             res = session.post(login_url, data=login)
             res.raise_for_status()
             cookie_val = res.cookies
             print(cookie_val)
-        # folder = login.get('loginType') + '/'
-        # df = pd.DataFrame(columns=['url', 'method', 'action', 'req_params', 'sel_params'])
         ret = []
         once = False
         while queue:
@@ -187,6 +175,8 @@ def main(input_url):
                 add_str = ''
                 checked = set()
                 if action:
+                    if action.startswith(root):
+                        action.replace(root,'')
                     action = root + action
                 else:
                     continue
@@ -225,4 +215,4 @@ def main(input_url):
 
 
 if __name__ == "__main__":
-    main("http://ssms.dongguk.edu")
+    main("http://192.168.56.107/dvwa/", False, None, None, None)
