@@ -1,4 +1,5 @@
 from urllib.request import urlopen
+import urllib.parse as urlparse
 from bs4 import BeautifulSoup
 from collections import deque
 import traceback
@@ -22,11 +23,12 @@ def search_tag(visited, soup, root, queue):
     for link in soup.find_all('a'):
         url = link.get('href')
         attr_flag = False
+        if '?' in url:
+            url, para = url.split('?')
         if not url:
             continue
         if url in visited:
             continue
-        # 여기 부분 확인하고 알려줘
         if url in ('#', '/'):
             continue  # http://ssms.dongguk.edu/# == http://ssms.dongguk.edu/ 이어서 그냥 거름
         for li in attr:
@@ -154,7 +156,7 @@ def main(input_url, is_login, login_url, id, pw):
                     soup = BeautifulSoup(res.content, "html.parser")
 
                 else:
-                    page_response = requests.get(absolute_path, timeout=1)
+                    page_response = requests.get(absolute_path, timeout=4)
                     soup = BeautifulSoup(page_response.content, 'html.parser')
                 search_tag(visited, soup, root, queue)
                 # val = soup.find_all('form')
@@ -224,4 +226,4 @@ def main(input_url, is_login, login_url, id, pw):
 
 
 if __name__ == "__main__":
-    main("http://192.168.56.101/", False, None, None, None)
+    main("http://192.168.56.107/", False, None, None, None)
