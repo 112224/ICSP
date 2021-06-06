@@ -168,8 +168,8 @@ def main(input_url, is_login, login_url, id, pw):
                 print(traceback.format_exc().splitlines()[-1])
 
         print('complete the task!!')
-        for ele in ret:
-            print(ele)
+        #for ele in ret:
+            #print(ele)
         ans.append(ret)
         get_ans.append(get_ret)
 
@@ -179,7 +179,13 @@ def main(input_url, is_login, login_url, id, pw):
     with open(f"sqlmap_list.txt", "w+", encoding='UTF-8') as f, open (f"xss_list.txt", "w+", encoding='UTF-8') as f2:
         url_check = set()
         for get_ret in get_ans:
-            ## 작성요망
+            for url in get_ret:
+
+                sql_add_str = ' --batch -u '+ url
+                xss_add_str= ' -f default -u ' + url
+                f.write(sql_add_str + '\n')
+                f2.write(xss_add_str + '\n')
+
         for ret in ans:
             for path, method, action, req_params, sel_params in ret:
                 for_data = []
@@ -215,14 +221,14 @@ def main(input_url, is_login, login_url, id, pw):
                 else:
                     continue
                 if method == 'post' or method == 'POST':
-                    sql_add_str = ' --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
-                    xss_add_str = ' --data="' + '&'.join(map(str, for_data))
+                    sql_add_str = ' --batch --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
+                    xss_add_str = '-f default --data="' + '&'.join(map(str, for_data))
                 if method == 'get' or method == 'GET':
                     if action in url_check:
                         continue
                     url_check.add(action)
-                f.write(action + sql_add_str + '\n')
-                f2.write(action + xss_add_str + '\n')
+                f.write(' -u ' + action + sql_add_str + '\n')
+                f2.write(' -u '+ action + xss_add_str + '\n')
                 # print(path, method, action, req_params, sel_params, '\n')
 
         # df.to_csv(f'{root}.csv', index=False)
@@ -230,4 +236,4 @@ def main(input_url, is_login, login_url, id, pw):
 
 
 if __name__ == "__main__":
-    main("http://192.168.56.107/", False, None, None, None)
+    main("http://192.168.56.101/", False, None, None, None)

@@ -1,0 +1,3 @@
+http://192.168.56.101/sessions (POST)  # C:\dev\cmder\git\ICSP\sqlmap\sqlmap.py http://192.168.56.101/sessions --data=utf8=1&authenticity_token=1&url=1&email=1&password=1&remember_me=True -p utf8,authenticity_token,url,email,password
+
+utf8=1&authenticity_token=1&url=1&email=1&password=1&remember_me=True
