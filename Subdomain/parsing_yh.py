@@ -21,11 +21,13 @@ def search_tag(visited, soup, root, queue, get_ret):
     # 페이지 안에 herf 로 다른 페이지 이동이 있을 경우
     attr = ['img']
     for link in soup.find_all('a'):
+        is_get = False
         url = link.get('href')
         attr_flag = False
         if '?' in url:
-            get_ret.append(url)
+            tmp_url = url
             url, para = url.split('?')
+            is_get = True
         if not url:
             continue
         if url in visited:
@@ -45,6 +47,10 @@ def search_tag(visited, soup, root, queue, get_ret):
             url = url.replace(root, '')  # /telnet 변환
         # print("url :", url)
         if url not in visited:
+            if is_get:
+                if not tmp_url.startswith(root):
+                    tmp_url = root + tmp_url
+                get_ret.append(tmp_url)
             visited.add(url)
             queue.append(url)
 
