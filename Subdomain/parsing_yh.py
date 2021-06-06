@@ -17,13 +17,14 @@ def refine_str(dirty):
 
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
-def search_tag(visited, soup, root, queue):
+def search_tag(visited, soup, root, queue, get_ret):
     # 페이지 안에 herf 로 다른 페이지 이동이 있을 경우
     attr = ['img']
     for link in soup.find_all('a'):
         url = link.get('href')
         attr_flag = False
         if '?' in url:
+            get_ret.append(url)
             url, para = url.split('?')
         if not url:
             continue
@@ -140,7 +141,7 @@ def main(input_url, is_login, login_url, id, pw):
             cookie_val = res.cookies
             print(cookie_val)
         ret = []
-        once = False
+        get_ret = []
         cnt=0
  
         while queue:
@@ -164,7 +165,6 @@ def main(input_url, is_login, login_url, id, pw):
                 search_ele(absolute_path, soup, ret)
             except:
                 print(traceback.format_exc().splitlines()[-1])
-            once = True
 
         print('complete the task!!')
         for ele in ret:
