@@ -124,6 +124,7 @@ def search_ele(path, soup, ret):
 
 def main(input_url, is_login, login_url, id, pw):
     ans = []
+    get_ans = []
     loginfo = [{}]
     # 사용자 입력을 받거나, 파일을 읽어오는 방식으로 변경
     # ex) 옵션을 줘서 읽어올 파일이 있으면 읽어오고 아닐 경우 입력을 받는 방식
@@ -159,7 +160,7 @@ def main(input_url, is_login, login_url, id, pw):
                 else:
                     page_response = requests.get(absolute_path, timeout=4)
                     soup = BeautifulSoup(page_response.content, 'html.parser')
-                search_tag(visited, soup, root, queue)
+                search_tag(visited, soup, root, queue, get_ret)
                 # val = soup.find_all('form')
                 # print(val)
                 search_ele(absolute_path, soup, ret)
@@ -170,12 +171,15 @@ def main(input_url, is_login, login_url, id, pw):
         for ele in ret:
             print(ele)
         ans.append(ret)
+        get_ans.append(get_ret)
 
     type_filter = ['radio', 'checkbox']
     # fname = input_url[8:] if input_url[:8] == 'https://' else input_url[7:]
     # with open(f"sql_{fname}.txt", "w+", encoding='UTF-8') as f:
     with open(f"sqlmap_list.txt", "w+", encoding='UTF-8') as f, open (f"xss_list.txt", "w+", encoding='UTF-8') as f2:
         url_check = set()
+        for get_ret in get_ans:
+            ## 작성요망
         for ret in ans:
             for path, method, action, req_params, sel_params in ret:
                 for_data = []
