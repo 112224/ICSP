@@ -17,7 +17,7 @@ def refine_str(dirty):
 
 # herf tag 를 만나면 => q에 추가
 # path => 현재 url
-def search_tag(visited, soup, root, queue):
+def search_tag(visited, soup, root, queue):             #search_tag에서 ret, ? para를 넣는다 
     # 페이지 안에 herf 로 다른 페이지 이동이 있을 경우
     attr = ['img']
     for link in soup.find_all('a'):
@@ -212,7 +212,7 @@ def main(input_url, is_login, login_url, id, pw):
                     continue
                 if method == 'post' or method == 'POST':
                     sql_add_str = ' --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
-                    xss_add_str = ' --data="' + '&'.join(map(str, for_data))
+                    xss_add_str = ' -f default'+ ' --data="' + '&'.join(map(str, for_data))
                 if method == 'get' or method == 'GET':
                     if action in url_check:
                         continue
@@ -226,4 +226,4 @@ def main(input_url, is_login, login_url, id, pw):
 
 
 if __name__ == "__main__":
-    main("http://192.168.56.107/", False, None, None, None)
+    main("http://192.168.56.101/", False, None, None, None)
