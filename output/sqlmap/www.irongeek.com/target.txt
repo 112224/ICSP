@@ -1,1 +1,0 @@
-http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10 (GET)  # C:\dev\cmder\git\ICSP\sqlmap\sqlmap.py --batch -u http://www.irongeek.com/i.php?page=mutillidae/mutillidae-deliberately-vulnerable-php-owasp-top-10

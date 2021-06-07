@@ -1,1 +1,0 @@
-https://sourceforge.net/p/owaspbwa/tickets/?limit=999 (GET)  # C:\dev\cmder\git\ICSP\sqlmap\sqlmap.py --batch -u https://sourceforge.net/p/owaspbwa/tickets/?limit=999

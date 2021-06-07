@@ -228,7 +228,7 @@ def main(input_url, is_login, login_url, id, pw):
                     continue
                 if method == 'post' or method == 'POST':
                     sql_add_str = ' --batch --data="' + '&'.join(map(str, for_data)) + '" -p ' + ','.join(map(str, for_para))
-                    xss_add_str = '-f default --data="' + '&'.join(map(str, for_data))
+                    xss_add_str = ' -f default --data="' + '&'.join(map(str, for_data))
                 if method == 'get' or method == 'GET':
                     if action in url_check:
                         continue

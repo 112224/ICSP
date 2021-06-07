@@ -26,7 +26,7 @@ def bruteforcer(target, paramData, payloadList, encoding, headers, delay, timeou
     if not os.path.exists(os.path.join(savedir,'output')):
         os.makedirs(os.path.join(savedir,'output'))
     if not os.path.exists(os.path.join(savedir,'output','xsstrike')):
-        os.makedirs(os.path.join(savedir,'output','xsstrike'))    
+        os.makedirs(os.path.join(savedir,'output','xsstrike'))      #target folder 추가
     fname=os.path.join(savedir,'output','xsstrike','log.txt')
     flag=False
     with open(fname,'a') as f:
