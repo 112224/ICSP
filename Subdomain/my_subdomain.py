@@ -121,8 +121,11 @@ def write_file(filename, df):
     # saving subdomains results to output file
     print("%s[-] Saving results to file: %s%s%s%s" % (Y, W, R, filename, W))
     if not df.empty:
+        csv_path = os.path.join(os.getcwd(), 'output', 'mysubdomain')
+        if not os.path.exists(csv_path):
+            os.makedirs(csv_path)
         # df = pd.DataFrame(subdomains, columns=['domain','ports'])
-        df.to_csv("./output/mysubdomain/" + filename, index=False)
+        df.to_csv(os.path.join(csv_path, filename), index=False)
         # print("save!")
     else:
         print("Data Frame is empty!\n Please check the args")

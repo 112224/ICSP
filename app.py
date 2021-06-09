@@ -24,7 +24,8 @@ extra = {
 }
 
 
-now_time = datetime.datetime.now().strftime('%H:%M:%S')
+def now_time():
+    return datetime.datetime.now().strftime('%H:%M:%S')
 
 
 class GetSubdomainThread(QThread):
@@ -35,7 +36,7 @@ class GetSubdomainThread(QThread):
     def run(self):
         line_text = self.parent.main.domainLineEdit.text()
         os.system(f"python Subdomain/my_subdomain.py -d {line_text} -p 80,443 -o log.csv")
-        self.parent.main.domainPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] Search End.")
+        self.parent.main.domainPlainTextEdit.appendPlainText(f"[{line_text}][{now_time()}] Search End.")
 
 
 class GetSQLMapThread(QThread):
@@ -47,21 +48,21 @@ class GetSQLMapThread(QThread):
         line_text = self.parent.main.webLineEdit.text()
         #
         parsing.main(line_text, False, None, None, None)
-        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] Parsing End.")
+        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time()}] Parsing End.")
         #
         with open('sqlmap_list.txt', 'r', encoding='UTF-8') as textfile:
             for line in textfile:
                 print("python sqlmap/sqlmap.py " + line + " --timeout=2")
                 os.system("python sqlmap/sqlmap.py " + line + " --timeout=2")
                 # self.parent.main.logTextEdit.appendPlainText(output)
-        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] SQLMap End.")
+        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time()}] SQLMap End.")
         #
         with open('xss_list.txt', 'r', encoding='UTF-8') as textfile:
             for line in textfile:
                 print("python XSStrike/xsstrike.py " + line)
                 os.system("python XSStrike/xsstrike.py " + line)
                 # self.parent.main.logTextEdit.appendPlainText(output)
-        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] XXStrike End.")
+        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time()}] XXStrike End.")
 
 
 class RuntimeStylesheets(QMainWindow, QtStyleTools):

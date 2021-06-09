@@ -1,0 +1,297 @@
+domain,ports,ip_address,ip_class,ssl_infomation,WAS
+as.dongguk.edu,,,,,
+abchome.dongguk.edu,"[80, 443]",210.94.174.12,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.19
+www.at.dongguk.edu,,,,,
+ai.dongguk.edu,"[80, 443]",210.94.194.114,C,"('www.example.com', '2020-08-28 15:55:56', '2030-08-26 15:55:56')",Apache
+acc.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+ace.dongguk.edu,"[80, 443]",115.68.17.172,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-17 00:00:00', '2022-05-31 23:59:59')",Microsoft-IIS/7.0
+at.dongguk.edu,"[80, 443]",183.111.182.200,B,"('Sectigo RSA Domain Validation Secure Server CA', '2020-12-03 00:00:00', '2021-12-03 23:59:59')",nginx
+8877.dongguk.edu,"[80, 443]",210.94.176.160,C,,Apache-Coyote/1.1
+art.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+antispam.dongguk.edu,"[80, 443]",210.94.190.61,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+archi.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+admission.dongguk.edu,"[80, 443]",210.94.190.35,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+www.dongguk.edu,"[80, 443]",210.94.190.35,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+abc.dongguk.edu,"[80, 443]",210.94.174.12,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.19
+www.bfsl.dongguk.edu,,,,,
+bfsl.dongguk.edu,"[80, 443]",183.111.174.43,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+www.icampus.dongguk.edu,,,,,
+www.bnm.dongguk.edu,,,,,
+bigdata.dongguk.edu,"[80, 443]",210.94.185.234,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.29 (Ubuntu)
+bio.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+booklib.dongguk.edu,"[80, 443]",210.94.174.198,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+bk21plus.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+bmclife.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+bmc.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+cdcold.dongguk.edu,"[80, 443]",210.94.176.129,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+caps.dongguk.edu,"[80, 443]",210.94.210.250,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.38 (Debian)
+www.chembio.dongguk.edu,,,,,
+chembio.dongguk.edu,"[80, 443]",183.111.174.42,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+cdc.dongguk.edu,"[80, 443]",210.94.176.129,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+justice.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+bnm.dongguk.edu,"[80, 443]",183.111.174.42,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+manhae.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.comm.dongguk.edu,,,,,
+civil.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+china.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+chembioeng.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+clinic.dongguk.edu,"[80, 443]",210.94.176.160,C,,Apache-Coyote/1.1
+cnc.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+www.dei.dongguk.edu,,,,,
+db.dongguk.edu,"[80, 443]",210.94.194.150,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache-Coyote/1.1
+chembio-ck.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+dcol.dongguk.edu,"[80, 443]",210.94.174.100,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache-Coyote/1.1
+cse.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.dgucoop.dongguk.edu,,,,,
+dgucoop.dongguk.edu,"[80, 443]",112.175.247.164,A,"('Sectigo RSA Domain Validation Secure Server CA', '2020-06-15 00:00:00', '2021-07-20 23:59:59')",nginx
+www.dgyec.dongguk.edu,,,,,
+dee.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+dei.dongguk.edu,"[80, 443]",183.111.182.203,B,"('Sectigo RSA Domain Validation Secure Server CA', '2020-08-23 00:00:00', '2021-08-23 23:59:59')",nginx
+deis.dongguk.edu,"[80, 443]",210.94.190.47,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+counseling.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+dmicweb.dongguk.edu,"[80, 443]",211.115.80.248,C,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-25 00:00:00', '2022-05-26 23:59:59')",Apache
+dong-ari.dongguk.edu,"[80, 443]",210.94.190.75,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+dic.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+dui.dongguk.edu,"[80, 443]",183.111.182.204,B,"('Sectigo RSA Domain Validation Secure Server CA', '2020-08-23 00:00:00', '2021-08-23 23:59:59')",nginx
+www.dui.dongguk.edu,,,,,
+dharma.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.dutebm.dongguk.edu,,,,,
+dongari.dongguk.edu,"[80, 443]",210.94.190.75,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+duce.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+durib.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+dutebm.dongguk.edu,"[80, 443]",183.111.174.43,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+duterm.dongguk.edu,"[80, 443]",183.111.174.42,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+www.duterm.dongguk.edu,,,,,
+www.dvic.dongguk.edu,,,,,
+dume.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+dutv.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+eclasstest.dongguk.edu,,,,,
+ebook2.dongguk.edu,"[80, 443]",210.94.174.15,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/10.0
+dvic.dongguk.edu,"[80, 443]",183.111.174.98,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-02-23 00:00:00', '2022-02-23 23:59:59')",nginx
+ebook.dongguk.edu,"[80, 443]",210.94.174.15,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/10.0
+eclass.dongguk.edu,"[80, 443]",210.94.190.107,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",.
+ecr.dongguk.edu,"[80, 443]",210.94.223.107,C,"('Synology Inc. CA', '2019-02-01 07:04:28', '2038-10-19 07:04:28')",nginx
+ei.dongguk.edu,"[80, 443]",183.111.182.204,B,"('Sectigo RSA Domain Validation Secure Server CA', '2020-08-23 00:00:00', '2021-08-23 23:59:59')",nginx
+www.ei.dongguk.edu,,,,,
+eclass2.dongguk.edu,"[80, 443]",210.94.190.108,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",.
+edu.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+emsl.dongguk.edu,"[80, 443]",210.94.172.194,C,"('R3', '2021-01-13 14:09:50', '2021-04-13 14:09:50')",
+www.engineer.dongguk.edu,,,,,
+edulife.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+engineer.dongguk.edu,"[80, 443]",112.175.50.180,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-02-28 00:00:00', '2022-02-28 23:59:59')",nginx
+fc.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+fcdev.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+filer.dongguk.edu,"[80, 443]",210.94.185.240,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+fin.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+food.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+gaia.dongguk.edu,"[80, 443]",183.111.182.200,B,"(None, '2017-04-13 00:34:41', '2117-03-20 00:34:41')",nginx
+geoedu.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+gifted.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+gm.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+graphic.dongguk.edu,"[80, 443]",210.94.176.229,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+graphics.dongguk.edu,"[80, 443]",203.245.44.42,C,"(None, '2017-04-13 00:34:41', '2117-03-20 00:34:41')",nginx
+gmailinfo.dongguk.edu,"[80, 443]",172.217.175.51,B,"('GTS CA 1D4', '2021-06-09 01:07:25', '2021-09-07 02:07:25')",ESF
+grrc.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+gs.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+gsl.dongguk.edu,"[80, 443]",210.94.176.66,C,"('R3', '2021-05-16 02:00:15', '2021-08-14 02:00:15')",
+gsca.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+gspa.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+gt.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+gw01.dongguk.edu,"[80, 443]",210.94.176.214,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/8.5
+gw02.dongguk.edu,"[80, 443]",210.94.176.224,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/8.5
+gwmail.dongguk.edu,"[80, 443]",210.94.176.200,C,"('MAIL1-CA', '2016-05-27 15:22:03', '2026-05-25 15:22:03')",Microsoft-IIS/8.5
+gwmail01.dongguk.edu,"[80, 443]",210.94.190.37,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/8.5
+hkplus.dongguk.edu,"[80, 443]",183.111.165.165,B,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips
+homeedu.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+hometax.dongguk.edu,"[80, 443]",210.94.176.70,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache-Coyote/1.1
+humanrights.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+ibc.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+icampus.dongguk.edu,"[80, 443]",183.111.199.197,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-07 00:00:00', '2022-03-07 23:59:59')",nginx
+bicdata.dongguk.edu,,,,,
+ice.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+iceed.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+ics.dongguk.edu,"[80, 443]",183.111.174.43,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+www.ics.dongguk.edu,,,,,
+cblab.dongguk.edu,[80],210.94.194.53,C,,
+comm.dongguk.edu,[80],110.10.129.180,A,,Apache
+mgw.ngw.dongguk.edu,[80],210.94.176.242,C,,
+ikb.dongguk.edu,"[80, 443]",210.94.174.12,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.19
+dgs.dongguk.edu,[80],210.94.219.31,C,,Apache/2.4.37 (Unix) PHP/5.2.17
+ilove.dongguk.edu,"[80, 443]",210.94.161.115,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.interlang.dongguk.edu,,,,,
+dgyec.dongguk.edu,[80],210.94.176.137,C,,
+innodata.dongguk.edu,"[80, 443]",112.175.85.247,A,"(None, '2017-04-13 00:34:41', '2117-03-20 00:34:41')",nginx
+interlang.dongguk.edu,"[80, 443]",183.111.182.196,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-07 00:00:00', '2022-03-07 23:59:59')",nginx
+interlangen.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+internship.dongguk.edu,"[80, 443]",210.94.161.161,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+interlangcn.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+ipp.dongguk.edu,"[80, 443]",210.94.161.161,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+ipsi.dongguk.edu,"[80, 443]",211.174.52.72,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/7.5
+irbe.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+ise.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+it.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+eml.dongguk.edu,[80],210.94.219.129,C,,Abyss/2.11.2-X1-Win32 AbyssLib/2.11.2
+itcec.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+its.dongguk.edu,,,,,
+itrade.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+jcrc.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+epf.dongguk.edu,[80],210.94.161.177,C,,
+jr.dongguk.edu,,,,,
+kabc.dongguk.edu,"[80, 443]",210.94.174.13,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/10.0
+job.dongguk.edu,"[80, 443]",211.172.232.192,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/8.5
+cerslab.dongguk.edu,"[80, 443]",210.94.185.234,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.29 (Ubuntu)
+*.kproxy.dongguk.edu,,210.94.174.194,C,,
+lib.dongguk.edu,"[80, 443]",210.94.174.198,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+libmid.dongguk.edu,"[80, 443]",210.94.174.16,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache-Coyote/1.1
+kinlab.dongguk.edu,"[80, 443]",34.80.190.141,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-22 00:00:00', '2021-08-20 23:59:59')",Pepyaka/1.19.0
+libsrv.dongguk.edu,,,,,
+life.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+www.kinlab.dongguk.edu,"[80, 443]",34.80.190.141,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-22 00:00:00', '2021-08-20 23:59:59')",Pepyaka/1.19.0
+lifescience.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+lincplus.dongguk.edu,"[80, 443]",112.175.50.209,A,"('AlphaSSL CA - SHA256 - G2', '2020-10-19 10:25:26', '2021-11-20 10:25:26')",nginx
+lotusfood.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+m.dongguk.edu,"[80, 443]",210.94.190.46,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+www.macl.dongguk.edu,,,,,
+macl.dongguk.edu,"[80, 443]",183.111.174.43,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+macs.dongguk.edu,"[80, 443]",210.94.161.238,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Microsoft-IIS/7.0
+mail.dongguk.edu,"[80, 443]",210.94.190.36,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+mailinfo.dongguk.edu,"[80, 443]",172.217.175.51,B,"('GTS CA 1D4', '2021-05-16 13:06:58', '2021-08-14 14:06:58')",ESF
+ijbtc.dongguk.edu,[80],52.78.146.248,A,,Apache
+change.dongguk.edu,,,,,
+manhae2003.dongguk.edu,"[80, 443]",183.111.182.212,B,"('Sectigo RSA Domain Validation Secure Server CA', '2020-10-03 00:00:00', '2021-10-03 23:59:59')",nginx
+www.manhae2003.dongguk.edu,,,,,
+marte.dongguk.edu,"[80, 443]",210.114.6.190,C,"(None, '2017-04-13 00:34:41', '2117-03-20 00:34:41')",nginx
+mba.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+mbooklib.dongguk.edu,"[80, 443]",210.94.174.198,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+mbt.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+me.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+mecha.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+med.dongguk.edu,"[80, 443]",183.111.174.94,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-04 00:00:00', '2022-03-04 23:59:59')",nginx
+www.med.dongguk.edu,,,,,
+3d.dongguk.edu,,210.94.199.44,C,,
+aiicc.dongguk.edu,,210.94.199.26,C,,
+apel.dongguk.edu,,210.94.222.176,C,,
+argon.dongguk.edu,,210.94.185.245,C,,
+azul.dongguk.edu,,210.94.185.241,C,,
+mip.dongguk.edu,"[80, 443]",183.111.174.113,B,"(None, '2017-04-13 00:34:41', '2117-03-20 00:34:41')",nginx
+mis.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+mme.dongguk.edu,"[80, 443]",210.94.178.145,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.18 (Ubuntu)
+buddha.dongguk.edu,,210.94.174.186,C,,
+pub.mme.dongguk.edu,"[80, 443]",210.94.172.184,C,"('Synology Inc. CA', '2020-08-28 08:12:23', '2021-08-29 08:12:23')",nginx
+class.dongguk.edu,,210.94.185.235,C,,
+www.model.dongguk.edu,,,,,
+mo.dongguk.edu,"[80, 443]",210.94.190.35,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+movie.dongguk.edu,"[80, 443]",112.175.50.220,A,"('Sectigo RSA Domain Validation Secure Server CA', '2020-12-03 00:00:00', '2021-12-03 23:59:59')",nginx
+www.movie.dongguk.edu,,,,,
+model.dongguk.edu,"[80, 443]",112.175.85.243,A,"('Sectigo RSA Domain Validation Secure Server CA', '2019-01-18 00:00:00', '2020-01-18 23:59:59')",nginx/1.15.6
+dguk.dongguk.edu,,115.89.144.254,A,,
+intern.dongguk.edu,[80],210.94.176.137,C,,
+www.mpp.dongguk.edu,,,,,
+mypc.dongguk.edu,,,,,
+www.nbt.dongguk.edu,,,,,
+ngw.dongguk.edu,,,,,
+mpp.dongguk.edu,"[80, 443]",52.231.167.40,A,"('Sectigo RSA Domain Validation Secure Server CA', '2020-03-04 00:00:00', '2022-03-04 23:59:59')",nginx
+nbt.dongguk.edu,"[80, 443]",183.111.174.42,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+nf.dongguk.edu,"[80, 443]",210.94.161.247,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+nita.dongguk.edu,"[80, 443]",183.111.141.34,B,"(None, '2017-04-13 00:34:41', '2117-03-20 00:34:41')",nginx
+cilab.dongguk.edu,"[80, 443]",210.94.194.163,C,"('Synology Inc. CA', '2016-01-28 08:12:07', '2035-10-15 08:12:07')",nginx
+normscience.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+ecampus.dongguk.edu,,49.238.224.51,A,,
+irobot.dongguk.edu,[80],210.94.189.222,C,,Apache/2.4.18 (Ubuntu)
+isms.dongguk.edu,[80],210.94.176.114,C,,
+ocw.dongguk.edu,"[80, 443]",210.94.202.110,C,"('GlobalSign Organization Validation CA - SHA256 - G2', '2017-11-30 08:45:41', '2021-02-28 08:45:41')",Microsoft-IIS/7.5
+ns2.dongguk.edu,"[80, 443]",210.94.190.5,C,"('www.infoblox.com', '2013-11-14 23:15:52', '2014-11-14 23:15:52')",
+eduedi.dongguk.edu,,210.94.192.83,C,,
+nuixitrc.dongguk.edu,"[80, 443]",121.78.246.41,A,,Apache/2.4.46 (Unix) OpenSSL/1.0.2k-fips PHP/5.3.29
+oz.dongguk.edu,,,,,
+ols.dongguk.edu,"[80, 443]",210.94.176.180,C,"('GlobalSign Organization Validation CA - SHA256 - G2', '2017-11-30 08:45:41', '2021-02-28 08:45:41')",
+ocw2.dongguk.edu,"[80, 443]",210.94.202.111,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+pe.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.pharmind.dongguk.edu,,,,,
+pharm.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+pa.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+pharmind.dongguk.edu,"[80, 443]",183.111.182.219,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-01-12 00:00:00', '2022-01-12 23:59:59')",nginx
+www.police.dongguk.edu,,,,,
+plass.dongguk.edu,"[80, 443]",210.94.194.79,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",nginx
+police.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+portal.dongguk.edu,"[80, 443]",210.94.190.44,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+r-find.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+rnd.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+ftceo.dongguk.edu,,210.94.222.162,C,,
+rule.dongguk.edu,"[80, 443]",210.94.161.224,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",apache
+safe.dongguk.edu,"[80, 443]",210.94.176.128,C,"('GlobalSign Organization Validation CA - SHA256 - G2', '2017-11-30 08:45:41', '2021-02-28 08:45:41')",Microsoft-IIS/7.5
+sanhak.dongguk.edu,"[80, 443]",210.94.176.131,C,"('GlobalSign Organization Validation CA - SHA256 - G2', '2017-11-30 08:45:41', '2021-02-28 08:45:41')",Microsoft-IIS/8.5
+sba.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+scholarship.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+science.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+hri.dongguk.edu,,210.94.194.140,C,,
+mail2.dongguk.edu,[80],210.94.161.220,C,,
+scps.dongguk.edu,"[80, 443]",34.80.190.141,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-18 00:00:00', '2021-08-16 23:59:59')",Pepyaka/1.19.0
+scsd.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.scps.dongguk.edu,"[80, 443]",34.80.190.141,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-18 00:00:00', '2021-08-16 23:59:59')",Pepyaka/1.19.0
+se.dongguk.edu,"[80, 443]",34.80.190.141,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-23 00:00:00', '2021-08-21 23:59:59')",Pepyaka/1.19.0
+security.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+shprc.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+www.se.dongguk.edu,"[80, 443]",34.80.190.141,A,"('Sectigo RSA Domain Validation Secure Server CA', '2021-05-23 00:00:00', '2021-08-21 23:59:59')",Pepyaka/1.19.0
+meic.dongguk.edu,[80],210.94.203.42,C,,Apache/2.2.3 (CentOS)
+imap.dongguk.edu,,210.94.190.65,C,,
+smdlab.dongguk.edu,"[80, 443]",210.94.164.57,C,"('R3', '2021-04-12 03:23:54', '2021-07-11 03:23:54')",nginx
+ns.dongguk.edu,[80],210.94.190.7,C,,
+otrcid.dongguk.edu,[80],218.38.13.29,C,,
+sophia.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+sotong.dongguk.edu,"[80, 443]",210.94.176.102,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache-Coyote/1.1
+sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",HUSS/2.0
+*.sproxy.dongguk.edu,,210.94.174.199,C,,
+portal2.dongguk.edu,[80],210.94.161.165,C,,
+portal1.dongguk.edu,[80],210.94.161.155,C,,
+lps3.scholar.google.com.sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",HUSS/2.0
+pos.libsteps.com.sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",HUSS/2.0
+www.dbpia.co.kr.sproxy.dongguk.edu,"[80, 443]",210.94.174.199,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",HUSS/2.0
+srd.dongguk.edu,"[80, 443]",210.94.190.35,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+www.startup.dongguk.edu,,,,,
+startup.dongguk.edu,"[80, 443]",13.124.192.105,A,"('Sectigo RSA Domain Validation Secure Server CA', '2019-10-18 00:00:00', '2021-10-17 23:59:59')",nginx
+libproxy.dongguk.edu,,210.94.174.220,C,,
+studyen.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+sugang.dongguk.edu,,,,,
+superintelligence.dongguk.edu,"[80, 443]",210.94.178.145,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.18 (Ubuntu)
+sung.dongguk.edu,"[80, 443]",210.94.178.145,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.18 (Ubuntu)
+sw.dongguk.edu,"[80, 443]",49.247.5.30,A,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.2.34 mod_jk/1.2.46
+swc.dongguk.edu,"[80, 443]",210.94.176.101,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.4.34 (Win64) OpenSSL/1.1.0i mod_jk/1.2.44
+templefood.dongguk.edu,"[80, 443]",210.94.176.203,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+theatre.dongguk.edu,"[80, 443]",210.94.176.204,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+tportal.dongguk.edu,,,,,
+trans-division.dongguk.edu,"[80, 443]",112.175.50.217,A,"(""Let's Encrypt Authority X3"", '2020-02-21 05:18:01', '2020-05-21 05:18:01')",nginx
+ucloud-lab.dongguk.edu,"[80, 443]",210.94.185.168,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",nginx
+udrims.dongguk.edu,"[80, 443]",210.94.190.34,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",IBM_HTTP_Server
+union.dongguk.edu,"[80, 443]",183.111.182.216,B,"('Sectigo RSA Domain Validation Secure Server CA', '2020-12-03 00:00:00', '2021-12-03 23:59:59')",nginx
+www.union.dongguk.edu,,,,,
+uniondev.dongguk.edu,,,,,
+vc.dongguk.edu,"[80, 443]",210.94.190.50,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",.
+maker.dongguk.edu,,210.94.199.180,C,,
+vn.dongguk.edu,"[80, 443]",210.94.176.205,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache/2.2.15 (CentOS)
+vod.dongguk.edu,"[80, 443]",101.202.16.77,A,"('DigiCert TLS RSA SHA256 2020 CA1', '2021-06-07 00:00:00', '2022-07-02 23:59:59')",
+volunteers.dongguk.edu,"[80, 443]",210.94.176.206,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",Apache
+who.dongguk.edu,"[80, 443]",183.111.182.206,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+www.who.dongguk.edu,,,,,
+www.who2.dongguk.edu,,,,,
+who2.dongguk.edu,"[80, 443]",183.111.174.69,B,"('Sectigo RSA Domain Validation Secure Server CA', '2021-03-21 00:00:00', '2022-03-21 23:59:59')",nginx
+wudrims.dongguk.edu,"[80, 443]",210.94.190.48,C,"('GlobalSign RSA OV SSL CA 2018', '2021-02-03 00:23:49', '2022-03-07 00:23:49')",
+site.dongguk.edu,[80],210.94.161.110,C,,
+media.dongguk.edu,,210.94.174.77,C,,
+a.mme.dongguk.edu,,210.94.172.186,C,,
+linux.mme.dongguk.edu,,210.94.172.185,C,,
+smartid.dongguk.edu,[80],210.94.176.58,C,,
+unix.mme.dongguk.edu,,210.94.178.125,C,,
+pdalgo.dongguk.edu,,210.94.194.66,C,,
+pop3.dongguk.edu,,210.94.190.64,C,,
+qsrc.dongguk.edu,,210.94.179.219,C,,
+rojo.dongguk.edu,,210.94.185.233,C,,
+rotc.dongguk.edu,,52.79.113.75,A,,
+swas.dongguk.edu,[80],210.94.161.153,C,,
+scratch.dongguk.edu,,210.94.185.242,C,,
+smartceo.dongguk.edu,,210.94.222.162,C,,
+smtp.dongguk.edu,,210.94.190.65,C,,
+soc.dongguk.edu,,210.94.203.169,C,,
+srl.dongguk.edu,,210.94.162.93,C,,
+step.dongguk.edu,,222.122.47.38,C,,
+wnl.dongguk.edu,,210.94.172.82,C,,
