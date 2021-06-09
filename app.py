@@ -1,3 +1,5 @@
+import os
+import datetime
 from subprocess import run, PIPE
 from multiprocessing import freeze_support
 
@@ -22,13 +24,18 @@ extra = {
 }
 
 
-class GetParsingThread(QThread):
+now_time = datetime.datetime.now().strftime('%H:%M:%S')
+
+
+class GetSubdomainThread(QThread):
     def __init__(self, parent_class):
-        super(GetParsingThread, self).__init__()
+        super(GetSubdomainThread, self).__init__()
         self.parent = parent_class
 
     def run(self):
-        parsing.main(self.parent.main.lineEdit.text(), False, None, None, None)
+        line_text = self.parent.main.domainLineEdit.text()
+        os.system(f"python Subdomain/my_subdomain.py -d {line_text} -p 80,443 -o log.csv")
+        self.parent.main.domainPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] Search End.")
 
 
 class GetSQLMapThread(QThread):
@@ -37,27 +44,24 @@ class GetSQLMapThread(QThread):
         self.parent = parent_class
 
     def run(self):
+        line_text = self.parent.main.webLineEdit.text()
         #
-        parsing.main(self.parent.main.lineEdit.text(), False, None, None, None)
-        self.parent.main.plainTextEdit.appendPlainText("Parsing End.")
+        parsing.main(line_text, False, None, None, None)
+        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] Parsing End.")
         #
         with open('sqlmap_list.txt', 'r', encoding='UTF-8') as textfile:
             for line in textfile:
-                print("python sqlmap/sqlmap.py " + line.strip('\n') + " --timeout=2")
-                output = run("python sqlmap/sqlmap.py " + line.strip('\n') + " --timeout=2",
-                             stdin=PIPE, capture_output=True, text=True)
-                print(output.stdout)
-                # self.parent.main.plainTextEdit.appendPlainText(output.stdout)
-        self.parent.main.plainTextEdit.appendPlainText("SQLMap End.")
+                print("python sqlmap/sqlmap.py " + line + " --timeout=2")
+                os.system("python sqlmap/sqlmap.py " + line + " --timeout=2")
+                # self.parent.main.logTextEdit.appendPlainText(output)
+        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] SQLMap End.")
         #
         with open('xss_list.txt', 'r', encoding='UTF-8') as textfile:
             for line in textfile:
-                print("python XSStrike/xsstrike.py " + line.strip('\n'))
-                output = run("python XSStrike/xsstrike.py " + line.strip('\n'),
-                             stdin=PIPE, capture_output=True, text=True)
-                print(output.stdout)
-                # self.parent.main.plainTextEdit.appendPlainText(output.stdout)
-        self.parent.main.plainTextEdit.appendPlainText("XXStrike End.")
+                print("python XSStrike/xsstrike.py " + line)
+                os.system("python XSStrike/xsstrike.py " + line)
+                # self.parent.main.logTextEdit.appendPlainText(output)
+        self.parent.main.webPlainTextEdit.appendPlainText(f"[{line_text}][{now_time}] XXStrike End.")
 
 
 class RuntimeStylesheets(QMainWindow, QtStyleTools):
@@ -67,18 +71,22 @@ class RuntimeStylesheets(QMainWindow, QtStyleTools):
 
         self.main = QUiLoader().load('main_window.ui', self)
         self.setWindowIcon(QIcon('icon.ico'))
-        self.main.plainTextEdit.setReadOnly(True)
-        print(self.main.LoginComboBox.currentText())
+        self.main.webPlainTextEdit.setReadOnly(True)
+        self.main.domainPlainTextEdit.setReadOnly(True)
 
         # 버튼 정의
-        self.main.pushButton.clicked.connect(self.start_button)
+        self.main.webPushButton.clicked.connect(self.web_button)
+        self.main.domainPushButton.clicked.connect(self.subdomain_button)
 
         # 스레드 정의
         self.get_sqlmap = GetSQLMapThread(self)
-        self.get_parsing = GetParsingThread(self)
+        self.get_subdomain = GetSubdomainThread(self)
 
-    def start_button(self):
+    def web_button(self):
         self.get_sqlmap.start()
+
+    def subdomain_button(self):
+        self.get_subdomain.start()
 
 
 if __name__ == "__main__":

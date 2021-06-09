@@ -122,7 +122,7 @@ def write_file(filename, df):
     print("%s[-] Saving results to file: %s%s%s%s" % (Y, W, R, filename, W))
     if not df.empty:
         # df = pd.DataFrame(subdomains, columns=['domain','ports'])
-        df.to_csv(filename, index=False)
+        df.to_csv("./output/mysubdomain/" + filename, index=False)
         # print("save!")
     else:
         print("Data Frame is empty!\n Please check the args")
@@ -1058,9 +1058,9 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
                 if pscan.subdomains_with_openports:
                     subdomains = pscan.subdomains_with_openports
                     df = pd.DataFrame(subdomains, columns=['domain', 'ports'])
-                    df['ip_address'] = get_ip_address(df['domain'].to_list())
-                    df['ip_class'] = get_ip_class(df['ip_address'].to_list())
-                    df['ssl_infomation'] = get_ssl_infomation(df['domain'].to_list())
+                    df['ip_address'] = get_ip_address(df['domain'].tolist())
+                    df['ip_class'] = get_ip_class(df['ip_address'].tolist())
+                    df['ssl_infomation'] = get_ssl_infomation(df['domain'].tolist())
                     df['WAS'] = get_was_infomation(df[['domain', 'ports']].values.tolist())
                     write_file(savefile, df)
 
