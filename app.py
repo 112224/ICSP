@@ -1,4 +1,4 @@
-from subprocess import run, call, PIPE
+from subprocess import run, PIPE
 from multiprocessing import freeze_support
 
 from PySide6.QtGui import QIcon
@@ -22,21 +22,42 @@ extra = {
 }
 
 
+class GetParsingThread(QThread):
+    def __init__(self, parent_class):
+        super(GetParsingThread, self).__init__()
+        self.parent = parent_class
+
+    def run(self):
+        parsing.main(self.parent.main.lineEdit.text(), False, None, None, None)
+
+
 class GetSQLMapThread(QThread):
     def __init__(self, parent_class):
         super(GetSQLMapThread, self).__init__()
         self.parent = parent_class
 
     def run(self):
+        #
+        parsing.main(self.parent.main.lineEdit.text(), False, None, None, None)
+        self.parent.main.plainTextEdit.appendPlainText("Parsing End.")
+        #
         with open('sqlmap_list.txt', 'r', encoding='UTF-8') as textfile:
-            text = textfile.readline()
-            while text:
-                print("python sqlmap/sqlmap.py -u " + text.strip('\n') + " --timeout=4 --batch")
-                output = run("python sqlmap/sqlmap.py -u " + text.strip('\n') + " --timeout=4 --batch",
+            for line in textfile:
+                print("python sqlmap/sqlmap.py " + line.strip('\n') + " --timeout=2")
+                output = run("python sqlmap/sqlmap.py " + line.strip('\n') + " --timeout=2",
                              stdin=PIPE, capture_output=True, text=True)
                 print(output.stdout)
-                self.parent.main.plainTextEdit.appendPlainText(output.stdout)
-                text = textfile.readline()
+                # self.parent.main.plainTextEdit.appendPlainText(output.stdout)
+        self.parent.main.plainTextEdit.appendPlainText("SQLMap End.")
+        #
+        with open('xss_list.txt', 'r', encoding='UTF-8') as textfile:
+            for line in textfile:
+                print("python XSStrike/xsstrike.py " + line.strip('\n'))
+                output = run("python XSStrike/xsstrike.py " + line.strip('\n'),
+                             stdin=PIPE, capture_output=True, text=True)
+                print(output.stdout)
+                # self.parent.main.plainTextEdit.appendPlainText(output.stdout)
+        self.parent.main.plainTextEdit.appendPlainText("XXStrike End.")
 
 
 class RuntimeStylesheets(QMainWindow, QtStyleTools):
@@ -54,10 +75,9 @@ class RuntimeStylesheets(QMainWindow, QtStyleTools):
 
         # 스레드 정의
         self.get_sqlmap = GetSQLMapThread(self)
+        self.get_parsing = GetParsingThread(self)
 
     def start_button(self):
-        # parsing.main(self.main.lineEdit.text())
-        self.main.plainTextEdit.appendPlainText("Parsing End.")
         self.get_sqlmap.start()
 
 
