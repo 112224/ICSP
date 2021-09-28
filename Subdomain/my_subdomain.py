@@ -865,6 +865,7 @@ class portscan():
         for subdomain in self.subdomains:
             t = threading.Thread(target=self.port_scan, args=(subdomain, self.ports))
             t.start()
+            # 쓰레드가 정상적으로 회수되지 않는 모습 => 에러 발생의 원인
 
 
 # using pandas dataframe
@@ -1052,6 +1053,7 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
                 print(G + subdomain + W)
         if savefile:
             if ports:
+                # 문제해결
                 # thread의 실행이 모두 끝난 뒤에
                 mainThread = threading.currentThread()
                 for thread in threading.enumerate():
